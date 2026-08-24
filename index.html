@@ -24,6 +24,24 @@ body{margin:0;background:var(--paper);color:var(--ink);
 body.big{--base:32px}
 .w{max-width:34rem;margin:0 auto;padding:0 1.35rem}
 
+/* --- écrans larges : colonne plus large, corps un peu réduit --- */
+@media (min-width:860px){
+  :root{--base:23px}
+  body.big{--base:29px}
+  .w{max-width:46rem;padding:0 2rem}
+  .hard,.good,.ask{margin-left:-2rem;margin-right:-2rem;padding-left:2rem;padding-right:2rem}
+  .golink{padding:1.5rem 1.8rem}
+  .lede{padding:4.5rem 0 3rem}
+  h1{font-size:2.35em}
+  section{padding:3.2rem 0}
+  .bud td{padding:.75rem 0}
+  .count{padding:1.8rem 2rem}
+  .rule-box{padding:1.8rem 2rem}
+}
+@media (min-width:1280px){
+  .w{max-width:50rem}
+}
+
 .size{position:fixed;top:0;right:0;z-index:20;background:#fff;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .size button{font-family:inherit;font-size:19px;font-weight:600;background:none;border:0;color:var(--soft);padding:.7rem 1rem;cursor:pointer;min-height:56px}
 .size button[aria-pressed="true"]{background:var(--ink);color:#fff}
@@ -93,6 +111,13 @@ li{margin-bottom:.7rem}
 .ask ul{margin:.9rem 0 0;font-size:.88em}
 
 .quiet{font-size:.85em;color:var(--soft)}
+.golink{display:block;text-decoration:none;color:inherit;border:3px solid var(--petrol);
+  background:#F3F7F7;padding:1.15rem 1.3rem;margin:1.8rem 0;transition:background .15s}
+.golink:hover,.golink:focus-visible{background:#E4EFF0;outline:none}
+.golink .gl{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--petrol);display:block;margin-bottom:.4rem}
+.golink .gt{font-family:"Newsreader",Georgia,serif;font-size:1.18em;line-height:1.3;font-weight:500;display:block}
+.golink .gs{display:block;font-size:.78em;color:var(--soft);line-height:1.45;margin-top:.35rem}
+.golink .garrow{display:inline-block;font-weight:600;color:var(--petrol);margin-top:.7rem;font-size:.82em;border-bottom:2px solid var(--petrol);padding-bottom:2px}
 .more{display:inline-block;margin-top:1.4rem;font-size:.8em;color:var(--petrol);border-bottom:2px solid var(--petrol);text-decoration:none;padding-bottom:2px}
 footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
 
@@ -117,6 +142,13 @@ footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
   <p>Je sais que vous voulez venir. Je vais tout faire pour que ça marche.</p>
   <p>Mais il y a quatre choses que vous devez savoir, et qui ne dépendent ni de votre volonté ni de la mienne.</p>
 </header>
+
+<a class="golink" href="./detail.html">
+  <span class="gl">Le dossier complet</span>
+  <span class="gt">Toutes les options, les chiffres et les délais</span>
+  <span class="gs">Les sept voies possibles, le calendrier détaillé, le coût poste par poste, et vos droits étape par étape. En français et en anglais.</span>
+  <span class="garrow">Ouvrir le dossier détaillé →</span>
+</a>
 
 <section>
   <span class="step">1 — La vérité difficile</span>
@@ -291,7 +323,12 @@ footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
   <p>Et vous pouvez venir <strong>six mois par an</strong> chez nous : le visa touriste est gratuit, trois mois par visite, deux fois dans l'année. Pas quelques semaines — des mois entiers, chez nous, sans loyer.</p>
   <p>On se verrait tous les six mois. Ce n'est pas un lot de consolation.</p>
   <p class="quiet">Je le dis maintenant pour qu'on ne joue pas tout sur une seule carte. Si la dérogation passe, tant mieux, on vous installe ici. Si elle ne passe pas, on a déjà le plan.</p>
-  <a class="more" href="./detail.html">Le détail complet des options →</a>
+  <a class="golink" href="./detail.html">
+    <span class="gl">Pour aller plus loin</span>
+    <span class="gt">Le dossier complet, option par option</span>
+    <span class="gs">Sept voies possibles, le calendrier, les honoraires détaillés, et le tableau de vos droits selon le statut.</span>
+    <span class="garrow">Ouvrir le dossier détaillé →</span>
+  </a>
 </section>
 
 <footer>
