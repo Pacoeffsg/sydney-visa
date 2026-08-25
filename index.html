@@ -89,6 +89,8 @@ li{margin-bottom:.7rem}
 .bud tr.inc td{border-bottom:0;color:var(--petrol);font-weight:600}
 .bud tr.gap td{border-top:2px solid var(--clay);border-bottom:0;color:var(--clay);font-weight:600;font-size:1.12em;padding-top:.8rem}
 .bud .note{display:block;font-size:.82em;font-weight:400;color:var(--soft);line-height:1.4;margin-top:.15rem}
+.bud tr.opt td{color:var(--soft);border-bottom:1px dashed var(--rule)}
+.bud tr.opt td.n{font-weight:400}
 
 .count{border:3px solid var(--clay);padding:1.5rem 1.35rem;margin:1.6rem 0;background:#FBF4F2}
 .count .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--clay);display:block;margin-bottom:.8rem}
@@ -197,15 +199,15 @@ footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
     <tr><td>Loyer — le minimum absolu<span class="note">500 $ par semaine, et c'est un plancher. Un deux-pièces correct est plutôt à 600.</span></td><td class="n">2 167 $</td></tr>
     <tr><td>Courses alimentaires<span class="note">Pour deux, sans extras.</span></td><td class="n">1 000 $</td></tr>
     <tr><td>Électricité, eau, internet, téléphones</td><td class="n">360 $</td></tr>
-    <tr><td>Voiture<span class="note">Achat étalé, immatriculation, assurance, essence. Indispensable dans le nord-ouest.</span></td><td class="n">350 $</td></tr>
+    <tr class="opt"><td>Voiture — en option<span class="note">Je vous prête la mienne. Restent l'immatriculation, l'assurance, l'essence et l'entretien. Le métro de Kellyville peut suffire les premiers temps.</span></td><td class="n">+ 250 $</td></tr>
     <tr><td>Santé — mutuelle et restes à charge<span class="note">Medicare ne rembourse pas tout, contrairement à la Sécu.</span></td><td class="n">300 $</td></tr>
     <tr><td>Assurance habitation et divers</td><td class="n">200 $</td></tr>
-    <tr class="sum"><td>Total par mois</td><td class="n">4 377 $</td></tr>
+    <tr class="sum"><td>Total par mois<span class="note">4 277 $ avec la voiture</span></td><td class="n">4 027 $</td></tr>
     <tr class="inc"><td>Vos revenus — 2 400 €</td><td class="n">3 912 $</td></tr>
-    <tr class="gap"><td>Il manque, chaque mois</td><td class="n">− 465 $</td></tr>
+    <tr class="gap"><td>Il manque, chaque mois<span class="note">− 365 $ avec la voiture</span></td><td class="n">− 115 $</td></tr>
   </table>
 
-  <p><strong>Il faudrait un loyer à 390 $ par semaine pour que le budget tienne.</strong> Le plancher réel est à 500. Chaque semaine, vous êtes déjà en dessous de l'équilibre — et ça, c'est avant le premier imprévu.</p>
+  <p><strong>Il faudrait un loyer à 473 $ par semaine pour que le budget tienne — 416 $ si vous prenez la voiture.</strong> Le plancher réel est à 500. Vous êtes donc au mieux tout juste à l'équilibre, sans rien mettre de côté et sans marge pour un imprévu.</p>
 
   <h3>Et avant tout ça : l'installation</h3>
 
@@ -242,8 +244,8 @@ footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
 
   <div class="count">
     <span class="lab">Et si on additionne tout</span>
-    <span class="big">8 à 27 mois</span>
-    <p>Votre épargne est de 30 000 €, soit environ 48 900 dollars. Le dossier en coûte 23 000 à 32 000. L'installation, 13 000 de plus. Il resterait donc entre <strong>4 000 et 13 000 dollars</strong> — et à 465 dollars de déficit par mois, tout serait épuisé en moins de deux ans.</p>
+    <span class="big">4 000 à 13 000 $</span>
+    <p>C'est tout ce qui vous resterait. Votre épargne est de 30 000 €, soit environ 48 900 dollars. Le dossier en coûte 23 000 à 32 000. L'installation, 13 000 de plus.</p>
     <p style="margin-top:.8rem"><strong>Autrement dit : plus aucune réserve.</strong> Pas pour un billet d'avion en urgence, pas pour une facture médicale, pas pour un imprévu.</p>
   </div>
 
@@ -253,13 +255,13 @@ footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
   <div class="vs">
     <div class="a">
       <span class="h">Sydney, en location</span>
-      <span class="fig">− 465 $ / mois</span>
+      <span class="fig">− 115 à − 365 $ / mois</span>
       <ul>
         <li>Loyer 2 167 $ par mois, au minimum</li>
         <li>13 000 $ d'installation au départ</li>
         <li>Logement difficile à obtenir</li>
         <li>Aucune aide avant dix ans</li>
-        <li>Plus aucune réserve après deux ans</li>
+        <li>Aucune marge, aucune épargne</li>
       </ul>
     </div>
     <div class="b">
