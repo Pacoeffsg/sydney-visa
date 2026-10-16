@@ -172,7 +172,7 @@ footer{padding:2.5rem 0 0;font-size:.74em;color:var(--soft);line-height:1.55;bor
 <body data-lang="fr">
 
 <div class="bar">
-  <button id="lfr" aria-pressed="true" onclick="lang('fr')">FR</button><button id="len" aria-pressed="false" onclick="lang('en')">EN</button>
+  <button id="lfr" aria-pressed="true" onclick="setLang('fr')">FR</button><button id="len" aria-pressed="false" onclick="setLang('en')">EN</button>
   <span class="sep"></span>
   <button id="b1" aria-pressed="true" onclick="sz(0)">A</button><button id="b2" aria-pressed="false" onclick="sz(1)" style="font-size:21px">A+</button>
 </div>
@@ -503,12 +503,15 @@ footer{padding:2.5rem 0 0;font-size:.74em;color:var(--soft);line-height:1.55;bor
 </div>
 
 <script>
-function lang(l){
+function setLang(l){
   document.body.dataset.lang=l;
   document.documentElement.lang=l;
   document.getElementById('lfr').setAttribute('aria-pressed', l==='fr');
   document.getElementById('len').setAttribute('aria-pressed', l==='en');
 }
+document.getElementById('lfr').addEventListener('click',function(){setLang('fr')});
+document.getElementById('len').addEventListener('click',function(){setLang('en')});
+
 function sz(i){
   document.body.classList.toggle('big', i===1);
   document.getElementById('b1').setAttribute('aria-pressed', i===0);
