@@ -1,414 +1,460 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Maman, Papa — ce qu'il faut savoir avant de décider</title>
+<title>Maman, Papa — où on en est</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme: light only;
-  --paper:#FFFFFF; --ink:#161E26; --soft:#4E5A64; --rule:#DDE1DD;
-  --petrol:#215866; --moss:#356047; --ochre:#8E6A18; --clay:#8E3B2C;
-  --base:26px;
+  --ink:#0B1220; --body:#334155; --soft:#64748B; --line:#E2E8F0;
+  --teal:#0D7D77; --teal-bg:#E6F6F4;
+  --green:#047857; --green-bg:#E7F6EF;
+  --amber:#B45309; --amber-bg:#FDF3E3;
+  --rose:#BE123C; --rose-bg:#FDECEF;
+  --indigo:#4338CA; --indigo-bg:#EEF0FD;
+  --base:25px;
 }
 *{box-sizing:border-box}
 html{background:#fff;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);
+body{margin:0;background:#fff;color:var(--body);
   font-family:"IBM Plex Sans",system-ui,sans-serif;
-  font-size:var(--base);line-height:1.62;padding:0 0 4rem}
-body.big{--base:32px}
-.w{max-width:34rem;margin:0 auto;padding:0 1.35rem}
+  font-size:var(--base);line-height:1.6;padding:0 0 5rem;-webkit-font-smoothing:antialiased}
+body.big{--base:31px}
+body[data-lang="fr"] .en{display:none}
+body[data-lang="en"] .fr{display:none}
+.w{max-width:33rem;margin:0 auto;padding:0 1.3rem}
 
-/* --- écrans larges : colonne plus large, corps un peu réduit --- */
-@media (min-width:860px){
-  :root{--base:23px}
-  body.big{--base:29px}
+@media (min-width:880px){
+  :root{--base:21px}
+  body.big{--base:27px}
   .w{max-width:46rem;padding:0 2rem}
-  .hard,.good,.ask{margin-left:-2rem;margin-right:-2rem;padding-left:2rem;padding-right:2rem}
-  .golink{padding:1.5rem 1.8rem}
-  .lede{padding:4.5rem 0 3rem}
-  h1{font-size:2.35em}
-  section{padding:3.2rem 0}
-  .bud td{padding:.75rem 0}
-  .count{padding:1.8rem 2rem}
-  .rule-box{padding:1.8rem 2rem}
-}
-@media (min-width:1280px){
-  .w{max-width:50rem}
+  h1{font-size:2.6em !important}
 }
 
-.size{position:fixed;top:0;right:0;z-index:20;background:#fff;border-left:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.size button{font-family:inherit;font-size:19px;font-weight:600;background:none;border:0;color:var(--soft);padding:.7rem 1rem;cursor:pointer;min-height:56px}
-.size button[aria-pressed="true"]{background:var(--ink);color:#fff}
+/* ---------- top bar ---------- */
+.bar{position:fixed;top:0;right:0;z-index:40;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);border-left:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:flex;border-bottom-left-radius:14px;overflow:hidden}
+.bar button{font-family:inherit;font-size:16px;font-weight:600;background:none;border:0;
+  color:var(--soft);padding:.65rem .8rem;cursor:pointer;min-height:52px}
+.bar button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.bar .sep{width:1px;background:var(--line)}
 
-section{padding:2.6rem 0;border-bottom:1px solid var(--rule)}
-section:last-of-type{border-bottom:0}
-.step{font-size:.6em;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--petrol);display:block;margin-bottom:.7rem}
-h1{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:2em;line-height:1.12;margin:0 0 1.1rem;letter-spacing:-.015em}
-h2{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:1.46em;line-height:1.2;margin:0 0 1rem}
-h3{font-size:.88em;font-weight:600;margin:1.8rem 0 .7rem;letter-spacing:.01em}
-p{margin:0 0 1.15rem}
-strong{font-weight:600}
-ul{padding-left:1.2rem;margin:0 0 1.15rem}
-li{margin-bottom:.7rem}
+/* ---------- hero ---------- */
+.hero{padding:3.4rem 0 2rem}
+.kicker{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);background:var(--teal-bg);
+  padding:.4rem .8rem;border-radius:100px;margin-bottom:1.1rem}
+h1{font-size:2.1em;font-weight:700;line-height:1.12;margin:0 0 1rem;
+  letter-spacing:-.025em;color:var(--ink)}
+.hero p{font-size:1.05em;margin:0 0 1rem;max-width:26em}
 
-.lede{padding:3.2rem 0 2.4rem;border-bottom:1px solid var(--rule)}
+/* ---------- status cards ---------- */
+.board{display:grid;gap:.8rem;margin:2rem 0 1rem}
+@media(min-width:880px){.board{grid-template-columns:repeat(3,1fr)}}
+.card{border-radius:16px;padding:1.3rem 1.25rem;border:2px solid}
+.card .t{font-size:.6em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  display:block;margin-bottom:.5rem}
+.card .v{font-size:1.35em;font-weight:700;line-height:1.2;display:block;color:var(--ink);
+  letter-spacing:-.02em}
+.card .s{font-size:.76em;line-height:1.45;display:block;margin-top:.45rem;color:var(--soft)}
+.c-green{background:var(--green-bg);border-color:#A7D9C4}.c-green .t{color:var(--green)}
+.c-teal{background:var(--teal-bg);border-color:#9FD5D1}.c-teal .t{color:var(--teal)}
+.c-amber{background:var(--amber-bg);border-color:#F0CE93}.c-amber .t{color:var(--amber)}
 
-.hard{background:#FBF4F2;border-left:6px solid var(--clay);padding:1.5rem 1.35rem;margin:0 -1.35rem 1.4rem}
-.hard .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--clay);display:block;margin-bottom:.6rem}
-.hard p{margin:0;font-family:"Newsreader",Georgia,serif;font-size:1.22em;line-height:1.38}
-.hard p+p{margin-top:.85rem}
+/* ---------- sections ---------- */
+section{padding:2.8rem 0;border-top:1px solid var(--line)}
+.num{display:inline-flex;align-items:center;justify-content:center;
+  width:2em;height:2em;border-radius:100px;font-size:.68em;font-weight:700;
+  background:var(--ink);color:#fff;margin-bottom:.9rem}
+h2{font-size:1.5em;font-weight:700;line-height:1.22;margin:0 0 .9rem;
+  letter-spacing:-.02em;color:var(--ink)}
+h3{font-size:.95em;font-weight:600;margin:1.9rem 0 .6rem;color:var(--ink)}
+p{margin:0 0 1.05rem;max-width:32em}
+strong{font-weight:600;color:var(--ink)}
+ul{padding-left:1.15rem;margin:0 0 1.05rem}
+li{margin-bottom:.6rem;max-width:30em}
 
-.good{background:#F3F7F4;border-left:6px solid var(--moss);padding:1.4rem 1.35rem;margin:1.4rem -1.35rem}
-.good .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--moss);display:block;margin-bottom:.6rem}
-.good p{margin:0}
-.good p+p{margin-top:.8rem}
+/* ---------- callouts ---------- */
+.box{border-radius:14px;padding:1.2rem 1.25rem;margin:1.5rem 0}
+.box .lab{font-size:.6em;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  display:block;margin-bottom:.55rem}
+.box p{margin:0;max-width:none}
+.box p+p{margin-top:.75rem}
+.box ul{margin:.9rem 0 0;font-size:.88em}
+.b-green{background:var(--green-bg)}.b-green .lab{color:var(--green)}
+.b-rose{background:var(--rose-bg)}.b-rose .lab{color:var(--rose)}
+.b-amber{background:var(--amber-bg)}.b-amber .lab{color:var(--amber)}
+.b-teal{background:var(--teal-bg)}.b-teal .lab{color:var(--teal)}
+.b-indigo{background:var(--indigo-bg)}.b-indigo .lab{color:var(--indigo)}
 
-.rule-box{border:3px solid var(--ink);padding:1.5rem 1.35rem;margin:1.5rem 0}
-.rule-box .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ochre);display:block;margin-bottom:.6rem}
-.rule-box p{margin:0;font-family:"Newsreader",Georgia,serif;font-size:1.24em;line-height:1.35}
-.rule-box ul{margin:1.1rem 0 0;font-size:.85em}
-.rule-box li{margin-bottom:.5rem}
+/* ---------- big figure ---------- */
+.fig{border-radius:16px;padding:1.6rem 1.35rem;margin:1.6rem 0;text-align:center}
+.fig .n{font-size:2.3em;font-weight:700;line-height:1;letter-spacing:-.035em;display:block}
+.fig .c{font-size:.8em;line-height:1.45;display:block;margin-top:.6rem}
+.f-green{background:var(--green-bg)}.f-green .n{color:var(--green)}.f-green .c{color:#2F6B55}
+.f-rose{background:var(--rose-bg)}.f-rose .n{color:var(--rose)}.f-rose .c{color:#8C3049}
+.f-indigo{background:var(--indigo-bg)}.f-indigo .n{color:var(--indigo)}.f-indigo .c{color:#4A4A8C}
 
-.money{margin:1.5rem 0}
-.mrow{display:flex;align-items:baseline;gap:1.1rem;padding:.95rem 0;border-top:2px solid var(--ink)}
-.mrow .n{font-weight:600;font-size:1.25em;white-space:nowrap;flex:none;min-width:6.4rem}
-.mrow .l{font-size:.8em;line-height:1.4;color:var(--soft)}
-.mrow.bad .n{color:var(--clay)}
-.mrow.ok .n{color:var(--moss)}
+/* ---------- details ---------- */
+details{border:1px solid var(--line);border-radius:12px;margin:1.3rem 0;background:#F8FAFC}
+details[open]{background:#fff;border-color:#CBD5E1}
+summary{cursor:pointer;list-style:none;padding:.95rem 1.15rem;font-size:.85em;
+  font-weight:600;color:var(--teal);display:flex;align-items:center;gap:.6rem;min-height:52px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-weight:700;font-size:1.2em;line-height:1}
+details[open] summary::before{content:"−"}
+summary:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
+.dbody{padding:0 1.15rem 1.2rem}
 
-.bud{width:100%;border-collapse:collapse;font-size:.82em;margin:1.4rem 0}
-.bud td{padding:.62rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
-.bud td.n{text-align:right;font-weight:600;white-space:nowrap;padding-left:1rem}
-.bud tr.sum td{border-top:2px solid var(--ink);border-bottom:0;font-weight:600;font-size:1.06em;padding-top:.8rem}
-.bud tr.inc td{border-bottom:0;color:var(--petrol);font-weight:600}
-.bud tr.gap td{border-top:2px solid var(--clay);border-bottom:0;color:var(--clay);font-weight:600;font-size:1.12em;padding-top:.8rem}
-.bud .note{display:block;font-size:.82em;font-weight:400;color:var(--soft);line-height:1.4;margin-top:.15rem}
-.bud tr.opt td{color:var(--soft);border-bottom:1px dashed var(--rule)}
-.bud tr.opt td.n{font-weight:400}
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:.82em;margin:.4rem 0 0}
+td{padding:.6rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.n{text-align:right;font-weight:600;white-space:nowrap;padding-left:.9rem;color:var(--ink)}
+tr.sum td{border-top:2px solid var(--ink);border-bottom:0;font-weight:700;padding-top:.75rem;color:var(--ink)}
+tr.inc td{border-bottom:0;color:var(--teal);font-weight:600}
+tr.gap td{border-top:2px solid var(--rose);border-bottom:0;color:var(--rose);font-weight:700;padding-top:.75rem}
+tr.win td{border-top:2px solid var(--green);border-bottom:0;color:var(--green);font-weight:700;padding-top:.75rem}
+tr.opt td{color:var(--soft);border-bottom:1px dashed var(--line)}
+tr.opt td.n{font-weight:400;color:var(--soft)}
+.note{display:block;font-size:.84em;font-weight:400;color:var(--soft);line-height:1.4;margin-top:.1rem}
 
-.scen{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0}
-.sc{border:1px solid var(--rule);border-left:6px solid var(--rule);padding:1.05rem 1.2rem}
-.sc.best{border-color:var(--moss);border-left-color:var(--moss);border-width:2px;border-left-width:6px;background:#F3F7F4}
-.sc .st{font-weight:600;display:block;line-height:1.3}
-.sc .sf{font-family:"Newsreader",Georgia,serif;font-size:1.5em;font-weight:500;display:block;margin:.35rem 0 .3rem;color:var(--moss)}
-.sc .sd{display:block;font-size:.78em;color:var(--soft);line-height:1.45}
-.sc .sb{font-size:.6em;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--moss);display:block;margin-bottom:.4rem}
-.count{border:3px solid var(--clay);padding:1.5rem 1.35rem;margin:1.6rem 0;background:#FBF4F2}
-.count .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--clay);display:block;margin-bottom:.8rem}
-.count .big{font-family:"Newsreader",Georgia,serif;font-size:1.9em;line-height:1.1;color:var(--clay);display:block;margin-bottom:.5rem}
-.count p{margin:0;font-size:.86em;line-height:1.5}
+/* ---------- scenarios ---------- */
+.sc{border:1px solid var(--line);border-radius:12px;padding:1rem 1.15rem;margin-bottom:.7rem}
+.sc.top{border:2px solid var(--green);background:var(--green-bg)}
+.sc .b{font-size:.58em;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--green);display:block;margin-bottom:.4rem}
+.sc .t{font-weight:600;color:var(--ink);display:block;line-height:1.3}
+.sc .f{font-size:1.35em;font-weight:700;display:block;margin:.3rem 0;letter-spacing:-.02em}
+.sc .d{font-size:.78em;color:var(--soft);line-height:1.45;display:block}
 
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0}
-.vs div{background:#fff;padding:1.1rem 1rem}
-.vs .h{font-size:.62em;letter-spacing:.12em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:.6rem}
-.vs .a .h{color:var(--petrol)} .vs .b .h{color:var(--moss)}
-.vs .fig{font-weight:600;font-size:1.15em;display:block;margin-bottom:.45rem}
-.vs .a .fig{color:var(--petrol)} .vs .b .fig{color:var(--moss)}
-.vs ul{margin:0;padding-left:1.05rem;font-size:.74em;line-height:1.45}
-.vs li{margin-bottom:.35rem}
-@media(max-width:520px){.vs{grid-template-columns:1fr}}
+/* ---------- steps ---------- */
+.steps{counter-reset:st;list-style:none;padding:0;margin:1.4rem 0}
+.steps li{counter-increment:st;position:relative;padding:0 0 1.3rem 3rem;max-width:30em}
+.steps li::before{content:counter(st);position:absolute;left:0;top:-.1rem;
+  width:2em;height:2em;border-radius:100px;background:var(--teal);color:#fff;
+  font-size:.72em;font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps b{color:var(--ink)}
+.who{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:.2rem .55rem;border-radius:100px;margin-left:.4rem;
+  background:var(--indigo-bg);color:var(--indigo);vertical-align:middle}
 
-.ask{border-left:6px solid var(--petrol);background:#F3F7F7;padding:1.4rem 1.35rem;margin:1.5rem -1.35rem}
-.ask .lab{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--petrol);display:block;margin-bottom:.6rem}
-.ask p{margin:0}
-.ask ul{margin:.9rem 0 0;font-size:.88em}
+/* ---------- link card ---------- */
+.go{display:block;text-decoration:none;color:inherit;border-radius:16px;
+  background:var(--ink);padding:1.4rem 1.35rem;margin:2rem 0}
+.go:hover,.go:focus-visible{background:#16233A;outline:none}
+.go .gl{font-size:.6em;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:#6FD3CB;display:block;margin-bottom:.4rem}
+.go .gt{font-size:1.1em;font-weight:600;color:#fff;display:block;line-height:1.3}
+.go .gs{font-size:.76em;color:#A9B6C9;display:block;line-height:1.45;margin-top:.4rem}
+.go .ga{display:inline-block;font-size:.8em;font-weight:600;color:#6FD3CB;margin-top:.8rem}
 
 .quiet{font-size:.85em;color:var(--soft)}
-.golink{display:block;text-decoration:none;color:inherit;border:3px solid var(--petrol);
-  background:#F3F7F7;padding:1.15rem 1.3rem;margin:1.8rem 0;transition:background .15s}
-.golink:hover,.golink:focus-visible{background:#E4EFF0;outline:none}
-.golink .gl{font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--petrol);display:block;margin-bottom:.4rem}
-.golink .gt{font-family:"Newsreader",Georgia,serif;font-size:1.18em;line-height:1.3;font-weight:500;display:block}
-.golink .gs{display:block;font-size:.78em;color:var(--soft);line-height:1.45;margin-top:.35rem}
-.golink .garrow{display:inline-block;font-weight:600;color:var(--petrol);margin-top:.7rem;font-size:.82em;border-bottom:2px solid var(--petrol);padding-bottom:2px}
-.more{display:inline-block;margin-top:1.4rem;font-size:.8em;color:var(--petrol);border-bottom:2px solid var(--petrol);text-decoration:none;padding-bottom:2px}
-footer{padding:2.4rem 0 0;font-size:.72em;color:var(--soft);line-height:1.55}
+footer{padding:2.5rem 0 0;font-size:.74em;color:var(--soft);line-height:1.55;border-top:1px solid var(--line)}
 
 @media (prefers-color-scheme: dark){
-  html,body{background:#fff !important;color:#161E26 !important}
-  .size,.size button{background:#fff}
-  .size button[aria-pressed="true"]{background:#161E26 !important;color:#fff !important}
-  .vs div{background:#fff !important}
+  html,body{background:#fff !important;color:#334155 !important}
+  .bar{background:#fff !important}
+  .bar button[aria-pressed="true"]{background:#0B1220 !important;color:#fff !important}
+  details{background:#F8FAFC !important}
+  details[open]{background:#fff !important}
+  .go{background:#0B1220 !important}
+  .go .gt{color:#fff !important}
 }
 </style>
 </head>
-<body>
+<body data-lang="fr">
 
-<div class="size" role="group" aria-label="Taille du texte">
-  <button id="b1" aria-pressed="true" onclick="sz(0)">A</button><button id="b2" aria-pressed="false" onclick="sz(1)" style="font-size:24px">A+</button>
+<div class="bar">
+  <button id="lfr" aria-pressed="true" onclick="lang('fr')">FR</button><button id="len" aria-pressed="false" onclick="lang('en')">EN</button>
+  <span class="sep"></span>
+  <button id="b1" aria-pressed="true" onclick="sz(0)">A</button><button id="b2" aria-pressed="false" onclick="sz(1)" style="font-size:21px">A+</button>
 </div>
 
 <div class="w">
 
-<header class="lede">
-  <h1>Maman, Papa — quatre choses avant de décider.</h1>
-  <p>Je sais que vous voulez venir. Je vais tout faire pour que ça marche.</p>
-  <p>Mais il y a quatre choses que vous devez savoir, et qui ne dépendent ni de votre volonté ni de la mienne.</p>
+<header class="hero">
+  <span class="kicker"><span class="fr">Mise à jour · Octobre 2026</span><span class="en">Update · October 2026</span></span>
+  <h1><span class="fr">Ça devient possible.</span><span class="en">It's becoming possible.</span></h1>
+  <p><span class="fr">L'avocat spécialisé nous a appris quelque chose d'important cette semaine. Voici où on en est, en trois minutes.</span><span class="en">The specialist lawyer told us something important this week. Here is where we stand, in three minutes.</span></p>
+
+  <div class="board">
+    <div class="card c-green">
+      <span class="t"><span class="fr">Le visa</span><span class="en">The visa</span></span>
+      <span class="v"><span class="fr">Probablement OK</span><span class="en">Probably OK</span></span>
+      <span class="s"><span class="fr">Après 75 ans, le calcul se fait sur 3 ans. Vous passeriez sous le seuil.</span><span class="en">Over 75, costs are assessed over 3 years. You would fall under the threshold.</span></span>
+    </div>
+    <div class="card c-teal">
+      <span class="t"><span class="fr">L'argent</span><span class="en">The money</span></span>
+      <span class="v"><span class="fr">Ça tient</span><span class="en">It works</span></span>
+      <span class="s"><span class="fr">Maman a droit à la pension australienne : environ 1 500 $ d'excédent par mois.</span><span class="en">Mum qualifies for the Australian pension: about A$1,500 surplus a month.</span></span>
+    </div>
+    <div class="card c-amber">
+      <span class="t"><span class="fr">Ce qu'il nous faut</span><span class="en">What we need</span></span>
+      <span class="v"><span class="fr">1 document</span><span class="en">1 document</span></span>
+      <span class="s"><span class="fr">Le compte rendu écrit de l'ophtalmologue. Rien d'autre pour l'instant.</span><span class="en">The ophthalmologist's written report. Nothing else for now.</span></span>
+    </div>
+  </div>
 </header>
 
-<a class="golink" href="./detail.html">
-  <span class="gl">Le dossier complet</span>
-  <span class="gt">Toutes les options, les chiffres et les délais</span>
-  <span class="gs">Les sept voies possibles, le calendrier détaillé, le coût poste par poste, et vos droits étape par étape. En français et en anglais.</span>
-  <span class="garrow">Ouvrir le dossier détaillé →</span>
-</a>
-
 <section>
-  <span class="step">1 — La vérité difficile</span>
-  <h2>Le visa peut être refusé, même si on paie tout.</h2>
+  <span class="num">1</span>
+  <h2><span class="fr">Après 75 ans, on compte sur 3 ans — pas 10.</span><span class="en">Over 75, they count 3 years — not 10.</span></h2>
 
-  <div class="hard">
-    <span class="lab">Ce qu'il faut avoir en tête</span>
-    <p>Les 20 000 dollars achètent le droit d'être examiné. Pas le droit d'entrer.</p>
-    <p>L'Australie ne regarde pas ce qu'on a payé. Elle calcule ce que les injections de Papa coûteraient à son système de santé sur les années à venir. Si le total dépasse le seuil et que la dérogation est refusée, l'argent est perdu. Il n'y a aucun remboursement.</p>
+  <p><span class="fr">L'Australie calcule ce que les soins de Papa coûteraient à son système de santé. Si le total dépasse un seuil, le visa est refusé.</span><span class="en">Australia calculates what Dad's care would cost its health system. If the total exceeds a threshold, the visa is refused.</span></p>
+
+  <p><span class="fr">Ce qu'on ignorait : <strong>pour les 75 ans et plus, le calcul porte sur trois ans seulement.</strong> L'âge de Papa, qui semblait un handicap, devient un avantage.</span><span class="en">What we did not know: <strong>for those aged 75 and over, the calculation covers three years only.</strong> Dad's age, which looked like a handicap, becomes an advantage.</span></p>
+
+  <div class="fig f-green">
+    <span class="n">45 – 58 k$</span>
+    <span class="c"><span class="fr">le coût estimé sur 3 ans · le seuil est à 86 000 $</span><span class="en">estimated cost over 3 years · the threshold is A$86,000</span></span>
   </div>
 
-  <p>Ce n'est pas une raison de renoncer. C'est une raison de préparer le dossier sérieusement au lieu de foncer.</p>
+  <div class="box b-green">
+    <span class="lab"><span class="fr">Ce que ça veut dire</span><span class="en">What that means</span></span>
+    <p><span class="fr">Papa pourrait passer l'examen médical <strong>sans avoir besoin d'aucune dérogation</strong>. Le dossier devient beaucoup plus simple et beaucoup plus sûr.</span><span class="en">Dad may pass the medical assessment <strong>with no waiver needed at all</strong>. The application becomes far simpler and far safer.</span></p>
+  </div>
 
-  <p><strong>Et il y a un piège :</strong> même si je m'engage par écrit à payer les soins de Papa en privé, le médecin du ministère calcule quand même ce que ça coûterait à la collectivité. Mon engagement compte comme argument de compassion, mais il n'efface pas le chiffre.</p>
+  <div class="box b-rose">
+    <span class="lab"><span class="fr">La réserve, et elle est sérieuse</span><span class="en">The caveat, and it is serious</span></span>
+    <p><span class="fr">Une autre règle dit qu'une affection permanente peut être évaluée sur dix ans. La DMLA entre dans cette catégorie.</span><span class="en">Another rule says a permanent condition can be assessed over ten years. AMD falls into that category.</span></p>
+    <p><span class="fr">Sur dix ans, le total dépasserait 150 000 $ et il faudrait plaider une dérogation.</span><span class="en">Over ten years the total would exceed A$150,000 and a waiver would have to be argued.</span></p>
+    <p><span class="fr"><strong>Trois ans ou dix ans : toute l'affaire tient à cette question.</strong> C'est la première chose que je fais trancher.</span><span class="en"><strong>Three years or ten: the whole matter turns on this.</strong> It is the first thing I am having settled.</span></p>
+  </div>
 </section>
 
 <section>
-  <span class="step">2 — La règle absolue</span>
-  <h2>Ne rien vendre. Ne rien quitter.</h2>
+  <span class="num">2</span>
+  <h2><span class="fr">Ce que je vous demande : un seul papier.</span><span class="en">What I'm asking of you: one document.</span></h2>
 
-  <div class="rule-box">
-    <span class="lab">Tant que la dérogation n'est pas accordée</span>
-    <p>On ne vend pas Esvres. On ne quitte pas la Guadeloupe. On n'engage rien d'irréversible.</p>
+  <p><span class="fr">Le compte rendu de l'ophtalmologue est le seul vrai levier. L'avocat plaide autour du chiffre ; l'ophtalmologue peut faire <strong>baisser</strong> le chiffre.</span><span class="en">The ophthalmologist's report is the only real lever. The lawyer argues around the figure; the ophthalmologist can <strong>lower</strong> it.</span></p>
+
+  <div class="box b-amber">
+    <span class="lab"><span class="fr">À demander par écrit</span><span class="en">To request in writing</span></span>
     <ul>
-      <li>Pas de vente de maison pour financer le dossier</li>
-      <li>Pas de résiliation de la Sécurité sociale</li>
-      <li>Pas de déménagement anticipé</li>
-      <li>Pas de bail signé ici avant la décision</li>
+      <li><span class="fr">L'historique complet : dates, œil traité, nom du produit</span><span class="en">The full history: dates, eye treated, product name</span></li>
+      <li><span class="fr">La fréquence actuelle, et si elle s'espace avec le temps</span><span class="en">Current frequency, and whether it is lengthening</span></li>
+      <li><span class="fr">L'acuité visuelle des deux yeux, et que Papa reste autonome</span><span class="en">Visual acuity in both eyes, and that Dad remains independent</span></li>
+      <li><span class="fr">Le pronostic sur cinq à dix ans</span><span class="en">The five-to-ten-year prognosis</span></li>
     </ul>
   </div>
 
-  <p>Le scénario à éviter absolument : vendre pour payer le visa, puis essuyer un refus. Plus de maison, plus de visa, et un retour sans point de chute.</p>
+  <p><span class="fr">Si les injections s'espacent, ne serait-ce qu'à huit ou dix semaines, la marge sous le seuil devient confortable.</span><span class="en">If the injections stretch out, even to eight or ten weeks, the margin under the threshold becomes comfortable.</span></p>
 
-  <p class="quiet">Maman, je sais que tu es décidée. Justement — être décidée, c'est garder toutes les portes ouvertes jusqu'à la décision, pas les fermer avant.</p>
+  <h3><span class="fr">Et plus tard : deux examens officiels</span><span class="en">And later: two official checks</span></h3>
+
+  <p><span class="fr">Ce ne sont pas les mêmes que le compte rendu de l'ophtalmologue. Ce sont deux pièces obligatoires du dossier, à faire une fois la demande lancée.</span><span class="en">These are not the same as the ophthalmologist's report. They are two compulsory parts of the application, done once it is under way.</span></p>
+
+  <div class="box b-teal">
+    <span class="lab"><span class="fr">L'examen médical officiel</span><span class="en">The official medical</span></span>
+    <p><span class="fr">Examen complet, radio des poumons et test sanguin, <strong>chez un médecin agréé par l'Australie</strong> — pas n'importe quel médecin.</span><span class="en">Full examination, chest X-ray and blood test, <strong>with a doctor approved by Australia</strong> — not just any doctor.</span></p>
+    <p><span class="fr">Il peut se faire <strong>en France lors de votre prochain séjour</strong>, ou ici en Australie. La liste des cabinets agréés est sur <strong>immi.homeaffairs.gov.au</strong> (« Find a panel physician »). Il n'y en a probablement pas en Guadeloupe — à vérifier sur ce site.</span><span class="en">It can be done <strong>in France on your next trip</strong>, or here in Australia. The list of approved clinics is at <strong>immi.homeaffairs.gov.au</strong> ("Find a panel physician"). There is probably none in Guadeloupe — check on that site.</span></p>
+    <p><span class="fr">Le résultat est <strong>valable douze mois</strong>. Il ne faut donc pas le faire trop tôt, sous peine de devoir le refaire.</span><span class="en">The result is <strong>valid for twelve months</strong>. So it must not be done too early, or it has to be repeated.</span></p>
+  </div>
+
+  <div class="box b-teal">
+    <span class="lab"><span class="fr">Les casiers judiciaires</span><span class="en">The police checks</span></span>
+    <p><span class="fr">Il en faut un <strong>pour chaque pays où vous avez vécu douze mois ou plus au cours des dix dernières années</strong>. Pour Papa : la France. Plus un casier australien, pour Papa <em>et</em> pour Maman comme garante.</span><span class="en">One is needed <strong>for every country you have lived in for twelve months or more over the past ten years</strong>. For Dad: France. Plus an Australian check, for Dad <em>and</em> for Mum as sponsor.</span></p>
+  </div>
+
+  <p><span class="fr">Le reste, je m'en charge : l'avocat, les formulaires, les rendez-vous ici.</span><span class="en">The rest I will handle: the lawyer, the forms, the appointments here.</span></p>
 </section>
 
 <section>
-  <span class="step">3 — Le coût de la vie ici</span>
-  <h2>Sydney coûte cher — mais avec la pension, ça tient.</h2>
+  <span class="num">3</span>
+  <h2><span class="fr">Ne rien vendre avant la décision.</span><span class="en">Sell nothing before the decision.</span></h2>
 
-  <p>C'est le point dont on ne parle jamais assez. Le visa se paie une fois. Le coût de la vie, lui, se paie tous les mois, pour toujours.</p>
+  <div class="box b-rose">
+    <span class="lab"><span class="fr">La règle absolue</span><span class="en">The absolute rule</span></span>
+    <p><span class="fr">On ne vend pas Esvres. On ne quitte pas la Guadeloupe. On ne signe aucun bail ici.</span><span class="en">We do not sell Esvres. We do not leave Guadeloupe. We sign no lease here.</span></p>
+    <p><span class="fr">Le scénario à éviter : vendre pour payer le visa, puis essuyer un refus. Plus de maison, plus de visa.</span><span class="en">The scenario to avoid: selling to pay for the visa, then being refused. No house, no visa.</span></p>
+  </div>
 
-  <p><strong>Bonne nouvelle : avec la pension australienne de Maman, ça tient.</strong> Mais il faut comprendre d'où vient l'équilibre, parce qu'il ne vient pas de vos revenus actuels.</p>
+  <p class="quiet"><span class="fr">Maman, je sais que tu es décidée. Justement — être décidée, c'est garder toutes les portes ouvertes jusqu'à la décision, pas les fermer avant.</span><span class="en">Mum, I know you have made up your mind. That is exactly the point — being decided means keeping every door open until the decision, not closing them beforehand.</span></p>
+</section>
 
-  <p>Voici ce que dépense un couple de retraités dans le nord-ouest de Sydney, une fois la résidence permanente obtenue — en prenant le loyer le plus bas qu'on puisse trouver.</p>
+<section>
+  <span class="num">4</span>
+  <h2><span class="fr">L'argent : ça tient, grâce à la pension de Maman.</span><span class="en">The money: it works, thanks to Mum's pension.</span></h2>
 
-  <table class="bud">
-    <tr><td>Loyer — le minimum absolu<span class="note">500 $ par semaine, et c'est un plancher. Un deux-pièces correct est plutôt à 600.</span></td><td class="n">2 167 $</td></tr>
-    <tr><td>Courses alimentaires<span class="note">Pour deux, sans extras.</span></td><td class="n">1 000 $</td></tr>
-    <tr><td>Électricité, eau, internet, téléphones</td><td class="n">360 $</td></tr>
-    <tr class="opt"><td>Voiture — en option<span class="note">Je vous prête la mienne. Restent l'immatriculation, l'assurance, l'essence et l'entretien. Le métro de Kellyville peut suffire les premiers temps.</span></td><td class="n">+ 250 $</td></tr>
-    <tr><td>Santé — mutuelle et restes à charge<span class="note">Medicare ne rembourse pas tout, contrairement à la Sécu.</span></td><td class="n">300 $</td></tr>
-    <tr><td>Assurance habitation et divers</td><td class="n">200 $</td></tr>
-    <tr class="sum"><td>Total par mois<span class="note">4 277 $ avec la voiture</span></td><td class="n">4 027 $</td></tr>
-    <tr class="inc"><td>Vos revenus — 2 400 €</td><td class="n">3 912 $</td></tr>
-    <tr class="gap"><td>Il manque, chaque mois<span class="note">− 365 $ avec la voiture</span></td><td class="n">− 115 $</td></tr>
+  <p><span class="fr">Maman est citoyenne australienne et a vécu ici <strong>jusqu'à ses 21 ans</strong>. Il faut dix ans de résidence pour avoir droit à la pension australienne : avec vingt-et-un ans, la condition est largement remplie.</span><span class="en">Mum is an Australian citizen and lived here <strong>until she was 21</strong>. Ten years of residence are required to qualify for the Australian pension: at twenty-one, the condition is comfortably met.</span></p>
+
+  <div class="box b-green">
+    <span class="lab"><span class="fr">Son droit est acquis</span><span class="en">Her entitlement is settled</span></span>
+    <p><span class="fr">Une fois installée en Australie, Maman peut demander l'<strong>Age Pension</strong> de Centrelink — <strong>en plus</strong> de sa pension française, qu'elle garde intégralement. Il ne reste qu'à en calculer le montant.</span><span class="en">Once settled in Australia, Mum can claim the <strong>Age Pension</strong> from Centrelink — <strong>on top of</strong> her French pension, which she keeps in full. All that remains is to calculate the amount.</span></p>
+  </div>
+
+  <h3><span class="fr">Vos revenus, clairement</span><span class="en">Your income, set out clearly</span></h3>
+
+  <table>
+    <tr><td><strong><span class="fr">Pensions françaises</span><span class="en">French pensions</span></strong><span class="note"><span class="fr">Papa et Maman · versées à vie, où que vous viviez</span><span class="en">Dad and Mum · paid for life, wherever you live</span></span></td><td class="n"><span class="fr">à préciser</span><span class="en">to confirm</span></td></tr>
+    <tr><td><strong><span class="fr">Loyer d'Esvres</span><span class="en">Esvres rent</span></strong><span class="note"><span class="fr">Tant que la maison n'est pas vendue</span><span class="en">As long as the house is not sold</span></span></td><td class="n"><span class="fr">à préciser</span><span class="en">to confirm</span></td></tr>
+    <tr class="sum"><td><span class="fr">Total actuel — 2 400 €</span><span class="en">Current total — €2,400</span></td><td class="n">3 912 $</td></tr>
+    <tr class="inc"><td><strong><span class="fr">Pension australienne de Maman</span><span class="en">Mum's Australian pension</span></strong><span class="note"><span class="fr">Age Pension, versée par Centrelink · droit acquis, 21 ans de résidence</span><span class="en">Age Pension from Centrelink · entitlement settled, 21 years of residence</span></span></td><td class="n">+ 1 200 $</td></tr>
+    <tr class="inc"><td><strong><span class="fr">Aide au logement</span><span class="en">Rent assistance</span></strong><span class="note"><span class="fr">Automatique pour tout pensionné locataire</span><span class="en">Automatic for any pensioner who rents</span></span></td><td class="n">+ 410 $</td></tr>
+    <tr class="win"><td><span class="fr">Revenu total une fois installés</span><span class="en">Total income once settled</span></td><td class="n">5 522 $</td></tr>
   </table>
 
-  <p><strong>Il faudrait un loyer à 473 $ par semaine pour que le budget tienne — 416 $ si vous prenez la voiture.</strong> Le plancher réel est à 500. Vous êtes donc au mieux tout juste à l'équilibre, sans rien mettre de côté et sans marge pour un imprévu.</p>
+  <p style="margin-top:1.2rem"><span class="fr">C'est le seul chiffre qui me manque : <strong>sur les 2 400 €, combien vient des pensions et combien du loyer ?</strong> Les deux sont comptés par Centrelink, mais pas de la même façon si vous vendez un jour.</span><span class="en">This is the one figure I am missing: <strong>of the €2,400, how much is pension and how much is rent?</strong> Both are counted by Centrelink, but not the same way if you ever sell.</span></p>
 
-  <h3>La pension australienne de Maman change tout</h3>
-
-  <p>Maman est citoyenne australienne. Si elle a vécu ici de sa naissance à ses 23 ans, elle remplit la condition des dix ans de résidence et peut demander la pension de retraite australienne — l'<strong>Age Pension</strong>, versée par <strong>Centrelink</strong> — une fois installée ici.</p>
-
-  <p><strong>Elle garde sa pension française en plus.</strong> Les deux se cumulent — mais pas à taux plein : l'Australie compte vos revenus français, et complète la différence. Elle ne remplace pas, elle ajoute.</p>
-
-  <div class="good">
-    <span class="lab">Ce qu'elle toucherait</span>
-    <p><strong>Environ 1 200 $ par mois</strong> de pension Centrelink, calculée après déduction de vos revenus français.</p>
-    <p><strong>Plus environ 410 $ par mois</strong> d'aide au logement, versée automatiquement à tout pensionné locataire.</p>
-    <p style="margin-top:.9rem"><strong>Soit à peu près 1 600 $ de plus chaque mois.</strong> Le budget passe d'un déficit de 115 $ à un excédent d'environ 1 490 $.</p>
+  <div class="fig f-green">
+    <span class="n">+ 1 490 $</span>
+    <span class="c"><span class="fr">d'excédent par mois, une fois la pension obtenue</span><span class="en">surplus per month, once the pension is granted</span></span>
   </div>
 
-  <p>C'est ce qui rend l'installation possible. Sans cette pension, Sydney n'est pas tenable ; avec elle, ça l'est confortablement.</p>
-
-  <div class="ask">
-    <span class="lab">Et c'est gratuit à vérifier</span>
-    <p>Centrelink propose un service de conseil financier, le <strong>Financial Information Service</strong>. Le rendez-vous ne coûte rien et ils calculent exactement ce que Maman toucherait, selon vos revenus, votre patrimoine et ses années de résidence.</p>
-    <p style="margin-top:.8rem">Je m'en occupe dès que vous m'aurez donné deux choses :</p>
-    <ul>
-      <li>Les années où Maman a vécu en Australie — dates de début et de fin, aussi précises que possible</li>
-      <li>La répartition des 2 400 € entre pensions et loyer d'Esvres</li>
-    </ul>
-    <p style="margin-top:.8rem"><strong>C'est le premier rendez-vous à prendre — avant même l'avocat.</strong> Il ne coûte rien et il conditionne tout le reste.</p>
-  </div>
-
-  <h3>Et si vous vendez Esvres ?</h3>
-
-  <p>Vendre ne fait pas perdre la pension — la maison et l'argent sont comptés de la même façon. Ce qui compte, c'est ce que vous faites de l'argent.</p>
-
-  <div class="scen">
-    <div class="sc best">
-      <span class="sb">Le meilleur choix</span>
-      <span class="st">Vendre Esvres et acheter un logement ici</span>
-      <span class="sf">+ 1 870 $ / mois</span>
-      <span class="sd">Le logement où l'on habite ne compte pas dans le calcul de la pension. Plus d'argent à la banque, plus de loyer à payer, et la pension monte.</span>
+  <details>
+    <summary><span class="fr">Voir le budget mensuel en détail</span><span class="en">See the monthly budget in detail</span></summary>
+    <div class="dbody">
+      <table>
+        <tr><td><span class="fr">Loyer — le minimum</span><span class="en">Rent — the minimum</span><span class="note"><span class="fr">500 $ par semaine</span><span class="en">A$500 a week</span></span></td><td class="n">2 167 $</td></tr>
+        <tr><td><span class="fr">Courses</span><span class="en">Groceries</span></td><td class="n">1 000 $</td></tr>
+        <tr><td><span class="fr">Électricité, eau, internet, téléphones</span><span class="en">Electricity, water, internet, phones</span></td><td class="n">360 $</td></tr>
+        <tr><td><span class="fr">Santé — mutuelle et restes à charge</span><span class="en">Health — top-up and gaps</span></td><td class="n">300 $</td></tr>
+        <tr><td><span class="fr">Assurance habitation et divers</span><span class="en">Contents insurance and sundries</span></td><td class="n">200 $</td></tr>
+        <tr class="opt"><td><span class="fr">Voiture — en option</span><span class="en">Car — optional</span><span class="note"><span class="fr">Je vous prête la mienne</span><span class="en">I'll lend you mine</span></span></td><td class="n">+ 250 $</td></tr>
+        <tr class="sum"><td><span class="fr">Total par mois</span><span class="en">Total per month</span></td><td class="n">4 027 $</td></tr>
+        <tr class="inc"><td><span class="fr">Revenu total (voir ci-dessus)</span><span class="en">Total income (see above)</span></td><td class="n">5 522 $</td></tr>
+        <tr class="win"><td><span class="fr">Il reste, chaque mois</span><span class="en">Left over, each month</span></td><td class="n">+ 1 495 $</td></tr>
+      </table>
     </div>
-    <div class="sc">
-      <span class="st">Garder Esvres et louer ici</span>
-      <span class="sf" style="color:var(--petrol)">+ 1 490 $ / mois</span>
-      <span class="sd">Le loyer d'Esvres continue de tomber, mais il réduit la pension australienne. Et il faut payer un loyer ici.</span>
-    </div>
-    <div class="sc">
-      <span class="st">Vendre Esvres et louer ici</span>
-      <span class="sf" style="color:var(--ochre)">+ 250 $ / mois</span>
-      <span class="sd">Le moins bon des trois : l'argent dort à la banque, il réduit quand même la pension, et le loyer sort tous les mois.</span>
-    </div>
+  </details>
+
+  <div class="box b-teal">
+    <span class="lab"><span class="fr">Et c'est gratuit à vérifier</span><span class="en">And it is free to check</span></span>
+    <p><span class="fr">Centrelink a un service gratuit, le <strong>Financial Information Service</strong>, qui calcule exactement le montant. Je prends rendez-vous dès que vous m'aurez donné deux choses :</span><span class="en">Centrelink has a free service, the <strong>Financial Information Service</strong>, which calculates the exact figure. I will book it as soon as you give me two things:</span></p>
+    <p style="margin-top:.8rem"><span class="fr">Il ne me manque qu'une chose : <strong>sur les 2 400 €, combien vient des pensions françaises et combien du loyer d'Esvres&nbsp;?</strong> C'est ce qui détermine le montant exact.</span><span class="en">I am missing only one thing: <strong>of the €2,400, how much comes from the French pensions and how much from the Esvres rent?</strong> That determines the exact amount.</span></p>
+    <p style="margin-top:.8rem"><span class="fr">Centrelink demandera aussi une preuve des années passées en Australie — acte de naissance, vieux documents scolaires ou administratifs. Rien d'urgent, mais autant commencer à chercher.</span><span class="en">Centrelink will also want evidence of the years spent in Australia — birth certificate, old school or official records. Nothing urgent, but worth starting to look.</span></p>
   </div>
 
-  <p class="quiet">Un détail à connaître : si vous nous donniez une partie de l'argent, Centrelink applique des plafonds — 10 000 $ par an, 30 000 $ sur cinq ans. Au-delà, la somme reste comptée comme si elle était toujours à vous, pendant cinq ans.</p>
+  <h3><span class="fr">Et si vous vendez Esvres ?</span><span class="en">And if you sell Esvres?</span></h3>
+  <p><span class="fr">Vendre ne fait pas perdre la pension. Ce qui compte, c'est ce que vous faites de l'argent.</span><span class="en">Selling does not lose the pension. What matters is what you do with the money.</span></p>
 
-  <div class="hard">
-    <span class="lab">Mais dans l'ordre</span>
-    <p>Tout ce qui précède décrit la situation <strong>une fois le visa accordé</strong>.</p>
-    <p>Vendre Esvres avant la décision reste le scénario à éviter absolument. D'abord le visa, ensuite seulement les arbitrages sur la maison.</p>
+  <div class="sc top">
+    <span class="b"><span class="fr">Le meilleur choix</span><span class="en">Best choice</span></span>
+    <span class="t"><span class="fr">Vendre Esvres et acheter ici</span><span class="en">Sell Esvres and buy here</span></span>
+    <span class="f" style="color:var(--green)">+ 1 870 $</span>
+    <span class="d"><span class="fr">Le logement où l'on habite ne compte pas dans le calcul de la pension. Plus de loyer, et la pension monte.</span><span class="en">The home you live in isn't counted for the pension. No rent, and the pension rises.</span></span>
+  </div>
+  <div class="sc">
+    <span class="t"><span class="fr">Garder Esvres et louer ici</span><span class="en">Keep Esvres and rent here</span></span>
+    <span class="f" style="color:var(--teal)">+ 1 490 $</span>
+    <span class="d"><span class="fr">Le loyer d'Esvres tombe toujours, mais il réduit la pension.</span><span class="en">The Esvres rent keeps coming, but it reduces the pension.</span></span>
+  </div>
+  <div class="sc">
+    <span class="t"><span class="fr">Vendre Esvres et louer ici</span><span class="en">Sell Esvres and rent here</span></span>
+    <span class="f" style="color:var(--amber)">+ 250 $</span>
+    <span class="d"><span class="fr">Le moins bon : l'argent dort, il réduit la pension, et le loyer sort tous les mois.</span><span class="en">Worst of the three: the money sits idle, still reduces the pension, and rent goes out monthly.</span></span>
   </div>
 
-  <h3>Et avant tout ça : l'installation</h3>
-
-  <p>C'est le coût qu'on oublie toujours. Un appartement australien se loue <strong>entièrement vide</strong> — pas de cuisine équipée, pas de réfrigérateur, pas de lave-linge, rien. Tout est à acheter.</p>
-
-  <table class="bud">
-    <tr><td>Caution — quatre semaines de loyer</td><td class="n">2 000 $</td></tr>
-    <tr><td>Deux semaines de loyer d'avance</td><td class="n">1 000 $</td></tr>
-    <tr><td>Lit, matelas, linge de maison</td><td class="n">2 000 $</td></tr>
-    <tr><td>Canapé, table, chaises, rangements</td><td class="n">3 000 $</td></tr>
-    <tr><td>Réfrigérateur, lave-linge, micro-ondes</td><td class="n">2 500 $</td></tr>
-    <tr><td>Vaisselle, ustensiles, rideaux, lampes</td><td class="n">1 500 $</td></tr>
-    <tr><td>Télévision et divers</td><td class="n">1 000 $</td></tr>
-    <tr class="sum"><td>À sortir dès le premier mois</td><td class="n">13 000 $</td></tr>
-  </table>
-
-  <p class="quiet">On peut faire moins cher en achetant d'occasion, mais on descend difficilement sous 8 000 $ pour équiper un logement de zéro.</p>
-
-  <h3>Et se loger ne sera pas simple</h3>
-
-  <p>En Australie, une agence immobilière demande des <strong>fiches de paie et un historique de location locale</strong>. Deux retraités étrangers qui viennent d'arriver, sans revenu australien et sans passé locatif ici, ne passeront pas le dossier tels quels.</p>
-
-  <p>Il faudra donc monter le dossier avec une garantie familiale, et cela prend du temps. C'est une raison de plus pour ne rien précipiter : <strong>aucun bail ne se signe avant que le visa soit accordé.</strong></p>
-
-  <h3>Les postes qui font mal</h3>
-
-  <p><strong>Les injections, avant la résidence permanente.</strong> Tant que le visa n'est pas déposé en Australie, une injection coûte entre 1 200 et 2 000 dollars, entièrement à votre charge. À raison de six par an, cela fait 7 000 à 12 000 dollars, en plus du reste.</p>
-
-  <p><strong>L'assurance santé.</strong> Pour un homme de 78 ans avec un diabète et une DMLA, une assurance visiteur coûte cher — et exclut presque toujours les maladies déjà connues. Autrement dit, elle couvrirait une chute ou une pneumonie, mais pas les injections.</p>
-
-  <p><strong>La perte du 100 %.</strong> Papa, en France tu ne paies rien : médicaments, spécialiste, hôpital, radiologie. En Australie, même avec Medicare, il reste toujours quelque chose à payer. Ce n'est pas énorme, mais ce n'est plus zéro.</p>
-
-  <p><strong>Aucune aide Centrelink pour Papa avant dix ans.</strong> Il n'aura droit à aucune pension australienne pendant dix ans après la résidence permanente. Ni carte senior, ni réductions de transport. Rien.</p>
-
-  <div class="count">
-    <span class="lab">Sans la pension, en revanche</span>
-    <span class="big">4 000 à 13 000 $</span>
-    <p>C'est tout ce qui resterait de votre épargne. Elle est de 30 000 €, soit environ 48 900 dollars ; le dossier en coûte 23 000 à 32 000, l'installation 13 000 de plus.</p>
-    <p style="margin-top:.8rem"><strong>D'où l'importance de la pension.</strong> Si Maman n'y avait pas droit, ou si le dossier traînait, il ne resterait aucune réserve — ni pour un billet d'avion en urgence, ni pour une facture médicale.</p>
-  </div>
-
-
-
-  <h3>Sydney contre Esvres, côte à côte</h3>
-  <div class="vs">
-    <div class="a">
-      <span class="h" style="color:var(--petrol)">Sydney, avec la pension</span>
-      <span class="fig" style="color:var(--moss)">+ 1 490 $ / mois</span>
-      <ul>
-        <li>Pension australienne + aide au logement</li>
-        <li>13 000 $ d'installation au départ</li>
-        <li>Logement difficile à obtenir au début</li>
-        <li>Aucune aide avant dix ans</li>
-        <li>Dépend entièrement de l'octroi du visa</li>
-      </ul>
+  <details>
+    <summary><span class="fr">Ce que coûte l'installation au départ</span><span class="en">What setting up costs at the start</span></summary>
+    <div class="dbody">
+      <p style="font-size:.85em"><span class="fr">Un appartement australien se loue <strong>entièrement vide</strong> — ni cuisine équipée, ni réfrigérateur, ni lave-linge.</span><span class="en">An Australian flat is let <strong>completely empty</strong> — no fitted kitchen, no fridge, no washing machine.</span></p>
+      <table>
+        <tr><td><span class="fr">Caution et loyer d'avance</span><span class="en">Bond and rent in advance</span></td><td class="n">3 000 $</td></tr>
+        <tr><td><span class="fr">Lit, canapé, table, rangements</span><span class="en">Bed, sofa, table, storage</span></td><td class="n">5 000 $</td></tr>
+        <tr><td><span class="fr">Réfrigérateur, lave-linge, micro-ondes</span><span class="en">Fridge, washing machine, microwave</span></td><td class="n">2 500 $</td></tr>
+        <tr><td><span class="fr">Vaisselle, rideaux, lampes, télévision</span><span class="en">Crockery, curtains, lamps, television</span></td><td class="n">2 500 $</td></tr>
+        <tr class="sum"><td><span class="fr">Dès le premier mois</span><span class="en">In the first month</span></td><td class="n">13 000 $</td></tr>
+      </table>
     </div>
-    <div class="b">
-      <span class="h">Esvres, propriétaires</span>
-      <span class="fig">à l'équilibre</span>
-      <ul>
-        <li>Aucun loyer</li>
-        <li>Prise en charge à 100 %</li>
-        <li>APA et aides à domicile accessibles</li>
-        <li>Épargne intacte, meubles déjà là</li>
-      </ul>
-    </div>
-  </div>
+  </details>
 </section>
 
 <section>
-  <span class="step">4 — Ce qui peut vraiment aider</span>
-  <h2>Le papier de l'ophtalmologue vaut plus que l'avocat.</h2>
+  <span class="num">5</span>
+  <h2><span class="fr">Le dossier coûte 18 000 $.</span><span class="en">The application costs A$18,000.</span></h2>
 
-  <p>C'est le seul vrai levier sur le calcul. L'avocat plaide autour du chiffre ; l'ophtalmologue, lui, peut faire baisser le chiffre.</p>
-
-  <div class="good">
-    <span class="lab">Pourquoi c'est décisif</span>
-    <p>Si les injections se sont espacées à dix ou douze semaines, la projection sur dix ans baisse fortement.</p>
-    <p>Si l'ophtalmologue peut écrire que le traitement se stabilise, ou que la fréquence diminue, ça change directement l'estimation officielle.</p>
-    <p>Tout le reste — les quarante-cinq ans de mariage, les deux enfants australiens — sert à plaider la dérogation. Mais c'est ce papier qui décide si on part sur un dossier jouable.</p>
+  <div class="fig f-indigo">
+    <span class="n">18 000 $</span>
+    <span class="c"><span class="fr">12 000 $ de frais gouvernementaux + 6 000 $ d'avocat au maximum<br>plus environ 1 000 à 1 600 $ de frais annexes</span><span class="en">A$12,000 government charge + A$6,000 lawyer at most<br>plus roughly A$1,000–1,600 in extras</span></span>
   </div>
 
-  <div class="ask">
-    <span class="lab">Ce que je vous demande cette semaine</span>
-    <p>Un rendez-vous chez l'ophtalmologue, avec un compte rendu écrit.</p>
-    <ul>
-      <li>DMLA sèche ou humide, et quel œil</li>
-      <li>La liste des injections : dates et nom du produit</li>
-      <li>Tous les combien elles sont faites</li>
-      <li>Si la fréquence s'espace avec le temps</li>
-      <li>S'il est possible de les espacer pendant un séjour de trois mois</li>
-    </ul>
+  <details>
+    <summary><span class="fr">Les frais annexes, en plus</span><span class="en">The extra costs, on top</span></summary>
+    <div class="dbody">
+      <table>
+        <tr><td><span class="fr">Examen médical, radio et test sanguin</span><span class="en">Medical, X-ray and blood test</span></td><td class="n">360 – 460 $</td></tr>
+        <tr><td><span class="fr">Casier judiciaire australien</span><span class="en">Australian police check</span><span class="note"><span class="fr">56 $ chacun, pour Papa et pour Maman</span><span class="en">A$56 each, for Dad and for Mum</span></span></td><td class="n">112 $</td></tr>
+        <tr><td><span class="fr">Casier judiciaire français</span><span class="en">French police certificate</span><span class="note"><span class="fr">Bulletin n° 3</span><span class="en">Bulletin n° 3</span></span></td><td class="n"><span class="fr">gratuit</span><span class="en">free</span></td></tr>
+        <tr><td><span class="fr">Traductions certifiées</span><span class="en">Certified translations</span><span class="note"><span class="fr">Acte de mariage, actes de naissance, dossier médical</span><span class="en">Marriage and birth certificates, medical file</span></span></td><td class="n">500 – 1 000 $</td></tr>
+        <tr class="sum"><td><span class="fr">À ajouter aux 18 000 $</span><span class="en">To add to the A$18,000</span></td><td class="n">~1 000 – 1 600 $</td></tr>
+      </table>
+      <p style="font-size:.8em;margin-top:.9rem"><span class="fr">Ces frais ne sont couverts ni par les frais gouvernementaux ni par les honoraires de l'avocat. Ils se paient à part, au fil du dossier.</span><span class="en">These are covered neither by the government charge nor by the lawyer's fee. They are paid separately, as the application proceeds.</span></p>
+    </div>
+  </details>
+
+  <div class="box b-rose">
+    <span class="lab"><span class="fr">À savoir</span><span class="en">To know</span></span>
+    <p><span class="fr">Les frais gouvernementaux ne sont <strong>jamais remboursés</strong>, même en cas de refus. C'est pourquoi on vérifie tout avant de déposer.</span><span class="en">The government charge is <strong>never refunded</strong>, even if refused. That is why we check everything before lodging.</span></p>
   </div>
 
-  <p>Le reste, je m'en charge : l'avocat, les formulaires, les rendez-vous ici.</p>
+  <p><span class="fr">Après le dossier et l'installation, il resterait environ <strong>16 600 $</strong> sur votre épargne. Une vraie réserve, pas un fond de tiroir.</span><span class="en">After the application and setting up, about <strong>A$17,900</strong> would remain of your savings. A real reserve, not loose change.</span></p>
 </section>
 
 <section>
-  <span class="step">Le coût du dossier</span>
-  <h2>Ce que ça coûte, et ce qu'on récupère si ça rate.</h2>
-  <div class="money">
-    <div class="mrow"><span class="n">11 710 $</span><span class="l">frais de dossier, payés une fois, jamais remboursés</span></div>
-    <div class="mrow"><span class="n">≈ 10 000 $</span><span class="l">avocat, parce que la dérogation demande un vrai mémoire</span></div>
-    <div class="mrow bad"><span class="n">0 $</span><span class="l">ce qu'on récupère en cas de refus</span></div>
-    <div class="mrow ok"><span class="n">quelques&nbsp;centaines</span><span class="l">pour un avis médical préalable, avant de tout engager</span></div>
+  <span class="num">6</span>
+  <h2><span class="fr">Si ça ne marche pas, on a déjà le plan.</span><span class="en">If it doesn't work, we already have a plan.</span></h2>
+
+  <p><span class="fr">Vous gardez Esvres, la Sécurité sociale, les injections prises en charge à 100 %. Et vous venez <strong>six mois par an</strong> chez nous — le visa touriste est gratuit, trois mois par visite, deux fois par an.</span><span class="en">You keep Esvres, French health cover, injections covered at 100%. And you come to us <strong>six months a year</strong> — the tourist visa is free, three months per visit, twice a year.</span></p>
+
+  <p><span class="fr">J'ai longtemps dit que cette option ne coûtait rien. C'est faux, et il faut le corriger.</span><span class="en">I long said this option cost nothing. That is wrong, and it needs correcting.</span></p>
+
+  <div class="fig f-rose">
+    <span class="n">11 800 – 17 600 $</span>
+    <span class="c"><span class="fr">par an, indéfiniment · billets d'avion et injections pendant les séjours</span><span class="en">per year, indefinitely · airfares and injections during the stays</span></span>
   </div>
 
-  <p><strong>Dans l'ordre : d'abord Centrelink, ensuite l'avocat.</strong> Le rendez-vous Centrelink est gratuit et nous dit si le budget tient. La consultation d'avocat coûte quelques centaines de dollars et nous dit si le dossier est jouable.</p>
+  <div class="box b-amber">
+    <span class="lab"><span class="fr">La vraie différence</span><span class="en">The real difference</span></span>
+    <p><span class="fr">Sur trois ans, les allers-retours coûtent 35 000 à 53 000 $ — plus que le visa et l'installation réunis, qui reviennent à 31 000 $.</span><span class="en">Over three years, the travel costs A$35,000–53,000 — more than the visa and setting up combined, at A$31,000.</span></p>
+    <p><span class="fr">L'un est une dépense qui se termine et débouche sur la pension australienne. L'autre recommence chaque année, et devient plus pénible avec l'âge.</span><span class="en">One is a cost that ends and leads to the Australian pension. The other starts again every year, and gets harder with age.</span></p>
+  </div>
 
-  <p><strong>Et la première chose que je vais lui demander :</strong> est-ce qu'un avis médical préalable, avant tout dépôt, permet d'estimer où se situerait la projection ? Quelques centaines de dollars pour savoir si on part sur un dossier solide ou sur un pari à 20 000.</p>
+  <p><span class="fr">Cela ne rend pas cette option mauvaise. Elle est sans risque : vous gardez tout, et rien ne peut vous être refusé. Simplement, elle n'est pas gratuite — je ne veux pas que vous choisissiez en croyant qu'elle l'est.</span><span class="en">This does not make the option a bad one. It is risk-free: you keep everything, and nothing can be refused you. It is simply not free — I do not want you choosing it believing that it is.</span></p>
 </section>
 
 <section>
-  <span class="step">Si ça ne marche pas</span>
-  <h2>Il restera une vie possible, et elle n'est pas triste.</h2>
-  <p>Vous avez la maison d'Esvres. Vous êtes propriétaires, la Sécurité sociale continue, les injections restent prises en charge à 100 %.</p>
-  <p>Et vous pouvez venir <strong>six mois par an</strong> chez nous : le visa touriste est gratuit, trois mois par visite, deux fois dans l'année. Pas quelques semaines — des mois entiers, chez nous, sans loyer.</p>
-  <p>On se verrait tous les six mois. Ce n'est pas un lot de consolation.</p>
-  <p class="quiet">Je le dis maintenant pour qu'on ne joue pas tout sur une seule carte. Si la dérogation passe, tant mieux, on vous installe ici. Si elle ne passe pas, on a déjà le plan.</p>
-  <a class="golink" href="./detail.html">
-    <span class="gl">Pour aller plus loin</span>
-    <span class="gt">Le dossier complet, option par option</span>
-    <span class="gs">Sept voies possibles, le calendrier, les honoraires détaillés, et le tableau de vos droits selon le statut.</span>
-    <span class="garrow">Ouvrir le dossier détaillé →</span>
+  <span class="num">7</span>
+  <h2><span class="fr">Les prochaines étapes.</span><span class="en">The next steps.</span></h2>
+
+  <ol class="steps">
+    <li><b><span class="fr">Le rendez-vous chez l'ophtalmologue</span><span class="en">The ophthalmologist appointment</span></b><span class="who"><span class="fr">Vous</span><span class="en">You</span></span><br><span class="fr">Avec le compte rendu écrit. Tout part de là.</span><span class="en">With the written report. Everything starts there.</span></li>
+    <li><b><span class="fr">La répartition des 2 400 €</span><span class="en">The split of the €2,400</span></b><span class="who"><span class="fr">Vous</span><span class="en">You</span></span><br><span class="fr">Combien vient des pensions françaises, combien du loyer d'Esvres.</span><span class="en">How much from the French pensions, how much from the Esvres rent.</span></li>
+    <li><b><span class="fr">Le rendez-vous Centrelink</span><span class="en">The Centrelink appointment</span></b><span class="who"><span class="fr">Moi</span><span class="en">Me</span></span><br><span class="fr">Gratuit. Il confirme le montant exact de la pension.</span><span class="en">Free. It confirms the exact pension figure.</span></li>
+    <li><b><span class="fr">Repérer un médecin agréé en France</span><span class="en">Find an approved doctor in France</span></b><span class="who"><span class="fr">Vous</span><span class="en">You</span></span><br><span class="fr">La liste est sur le site du ministère australien — <strong>immi.homeaffairs.gov.au</strong>, outil « Find a panel physician ». Choisissez la France pour voir les cabinets agréés, et calez l'examen sur votre prochain séjour.</span><span class="en">The list is on the Australian department's site — <strong>immi.homeaffairs.gov.au</strong>, the "Find a panel physician" tool. Select France to see approved clinics, and line the exam up with your next trip.</span></li>
+    <li><b><span class="fr">L'avocat</span><span class="en">The lawyer</span></b><span class="who"><span class="fr">Moi</span><span class="en">Me</span></span><br><span class="fr">Pour trancher la question des trois ans contre dix.</span><span class="en">To settle the three-years-versus-ten question.</span></li>
+    <li><b><span class="fr">On décide ensemble</span><span class="en">We decide together</span></b><span class="who"><span class="fr">Tous</span><span class="en">All</span></span><br><span class="fr">Rien n'est vendu, rien n'est engagé avant cette conversation.</span><span class="en">Nothing sold, nothing committed before that conversation.</span></li>
+  </ol>
+
+  <a class="go" href="./detail.html">
+    <span class="gl"><span class="fr">Pour aller plus loin</span><span class="en">To go further</span></span>
+    <span class="gt"><span class="fr">Le dossier complet, option par option</span><span class="en">The full file, option by option</span></span>
+    <span class="gs"><span class="fr">Sept voies possibles, le calendrier détaillé, les honoraires, et le tableau de vos droits selon le statut.</span><span class="en">Seven possible routes, the detailed timeline, the fees, and the table of your entitlements by status.</span></span>
+    <span class="ga"><span class="fr">Ouvrir le dossier détaillé →</span><span class="en">Open the detailed file →</span></span>
   </a>
 </section>
 
 <footer>
-  <p>Prenez votre temps. Appelez-moi quand vous voulez, on en parle de vive voix.</p>
-  <p>Montants en dollars australiens · 1 € ≈ 1,63 A$ · août 2026</p>
+  <p><span class="fr">Prenez votre temps. Appelez-moi quand vous voulez, on en parle de vive voix.</span><span class="en">Take your time. Call me whenever you like, we can talk it through.</span></p>
+  <p><span class="fr">Montants en dollars australiens · 1 € ≈ 1,63 A$ · octobre 2026</span><span class="en">Amounts in Australian dollars · €1 ≈ A$1.63 · October 2026</span></p>
 </footer>
 
 </div>
 
 <script>
+function lang(l){
+  document.body.dataset.lang=l;
+  document.documentElement.lang=l;
+  document.getElementById('lfr').setAttribute('aria-pressed', l==='fr');
+  document.getElementById('len').setAttribute('aria-pressed', l==='en');
+}
 function sz(i){
   document.body.classList.toggle('big', i===1);
   document.getElementById('b1').setAttribute('aria-pressed', i===0);

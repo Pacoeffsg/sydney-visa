@@ -8,18 +8,18 @@
 <title>Venir vivre à Sydney — le détail</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme: light only;
-  --paper:#FFFFFF; --card:#F8F9F8; --ink:#1A222A; --ink-soft:#5A6670;
-  --rule:#E3E5E2; --petrol:#28616F; --petrol-lt:#6E9DA9;
-  --ochre:#9A7420; --clay:#9A4433; --moss:#3B6B4F; --tint:#F3F7F7;
+  --paper:#FFFFFF; --card:#F8FAFC; --ink:#0B1220; --ink-soft:#64748B;
+  --rule:#E2E8F0; --petrol:#0D7D77; --petrol-lt:#5FB3AC;
+  --ochre:#B45309; --clay:#BE123C; --moss:#047857; --tint:#E6F6F4;
   --base:20px; --maxw:900px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:#FFFFFF;color-scheme:light only}
-body{margin:0;background:var(--paper);color:var(--ink);
+body{margin:0;background:var(--paper);color:#334155;
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:var(--base);
   line-height:1.7;padding-bottom:4rem}
 body[data-size="lg"]{--base:24px}
@@ -38,11 +38,11 @@ body[data-lang="en"] .fr{display:none}
 
 .mast{padding:2.4rem 0 2rem}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.6em;letter-spacing:.16em;text-transform:uppercase;color:var(--petrol);font-weight:600}
-h1{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:clamp(2.1rem,6.5vw,3.3rem);line-height:1.1;margin:.6rem 0 .9rem;letter-spacing:-.015em}
+h1{font-family:"IBM Plex Sans",sans-serif;font-weight:700;font-size:clamp(2.1rem,6.5vw,3rem);line-height:1.12;margin:.6rem 0 .9rem;letter-spacing:-.025em;color:var(--ink)}
 .standfirst{font-size:1.08em;color:var(--ink-soft);max-width:30em;margin:0}
 .meta{font-family:"IBM Plex Mono",monospace;font-size:.62em;color:var(--ink-soft);margin-top:1.6rem;letter-spacing:.03em;line-height:1.6}
 section{padding:2.75rem 0;border-top:1px solid var(--rule);scroll-margin-top:70px}
-h2{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:clamp(1.55rem,4vw,2.1rem);line-height:1.18;margin:.4rem 0 1.1rem;letter-spacing:-.01em}
+h2{font-family:"IBM Plex Sans",sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,1.95rem);line-height:1.2;margin:.4rem 0 1.1rem;letter-spacing:-.022em;color:var(--ink)}
 h3{font-size:1em;font-weight:600;margin:2rem 0 .7rem}
 p{margin:0 0 1.1rem;max-width:33em}
 ul.plain{padding-left:1.2rem;margin:0 0 1.1rem}
@@ -58,27 +58,27 @@ ol.steps li{margin-bottom:1rem;max-width:33em}
 .kpi .l{font-size:.66em;line-height:1.4;display:block;margin-top:.45rem;color:var(--ink-soft)}
 @media(max-width:620px){.kpis{grid-template-columns:1fr}}
 
-.bigwarn{background:#FBF4F2;border-left:6px solid var(--clay);padding:1.4rem 1.3rem;margin:1.8rem 0}
+.bigwarn{background:#FDECEF;border-left:6px solid var(--clay);padding:1.4rem 1.3rem;margin:1.8rem 0;border-radius:14px}
 .bigwarn .lab{font-family:"IBM Plex Mono",monospace;font-size:.58em;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--clay);display:block;margin-bottom:.55rem}
-.bigwarn p{margin:0;font-family:"Newsreader",Georgia,serif;font-size:1.14em;line-height:1.42;max-width:30em}
+.bigwarn p{margin:0;font-size:1.02em;line-height:1.5;max-width:32em}
 .bigwarn p+p{margin-top:.8rem}
 .bigwarn ul{margin:1rem 0 0;padding-left:1.2rem;font-size:.85em;font-family:"IBM Plex Sans",sans-serif}
 .bigwarn li{margin-bottom:.5rem}
-.bigwarn.dark{border-left-color:var(--ink);background:#F5F6F5}
+.bigwarn.dark{border-left-color:var(--ink);background:#F1F5F9}
 .bigwarn.dark .lab{color:var(--ochre)}
-.bigwarn.green{border-left-color:var(--moss);background:#F3F7F4}
+.bigwarn.green{border-left-color:var(--moss);background:#E7F6EF}
 .bigwarn.green .lab{color:var(--moss)}
 
 .sumbox{margin:2.2rem 0 0}
 .sum-h{font-family:"IBM Plex Mono",monospace;font-size:.6em;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--petrol);margin-bottom:.9rem;display:block}
-.rank{display:block;border:1px solid var(--rule);border-left:5px solid var(--rule);padding:1rem 1.15rem;margin-bottom:.7rem;text-decoration:none;color:inherit;background:#fff}
+.rank{display:block;border:1px solid var(--rule);border-left:6px solid var(--rule);padding:1.05rem 1.2rem;margin-bottom:.7rem;text-decoration:none;color:inherit;background:#fff;border-radius:14px}
 .rank:hover,.rank:focus-visible{background:var(--tint);outline:none}
 .rbadge{font-family:"IBM Plex Mono",monospace;font-size:.58em;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:.35rem}
 .rtitle{font-weight:600;display:block;line-height:1.3;font-size:1.02em}
 .rwhy{display:block;font-size:.84em;color:var(--ink-soft);line-height:1.5;margin-top:.35rem;max-width:34em}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
-.chip{font-family:"IBM Plex Mono",monospace;font-size:.62em;letter-spacing:.03em;padding:.28rem .55rem;background:var(--card);border:1px solid var(--rule);color:var(--ink-soft);white-space:nowrap}
-.rank.r1{border-left-color:var(--moss);background:#F6FAF7}.r1 .rbadge{color:var(--moss)}
+.chip{font-size:.62em;font-weight:600;letter-spacing:.02em;padding:.3rem .65rem;background:var(--card);border:1px solid var(--rule);color:var(--ink-soft);white-space:nowrap;border-radius:100px}
+.rank.r1{border-left-color:var(--moss);background:#E7F6EF}.r1 .rbadge{color:var(--moss)}
 .rank.r2{border-left-color:var(--petrol)}.r2 .rbadge{color:var(--petrol)}
 .rank.r3{border-left-color:var(--ochre)}.r3 .rbadge{color:var(--ochre)}
 .rank.r4{border-left-color:var(--petrol-lt)}.r4 .rbadge{color:var(--petrol-lt)}
@@ -90,11 +90,11 @@ ol.steps li{margin-bottom:1rem;max-width:33em}
 .pc li.y::before{content:"\2713";color:var(--moss)}
 .pc li.n::before{content:"\2715";color:var(--clay)}
 @media(max-width:560px){.pc{grid-template-columns:1fr;gap:.3rem}}
-.pivot{border:2px solid var(--ink);padding:1.15rem 1.25rem;margin:1.4rem 0 0;background:#fff}
+.pivot{border:2px solid var(--ink);padding:1.2rem 1.3rem;margin:1.4rem 0 0;background:#fff;border-radius:14px}
 .pivot b{font-family:"IBM Plex Mono",monospace;font-size:.58em;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:.45rem;color:var(--ochre)}
-.pivot p{margin:0;font-family:"Newsreader",Georgia,serif;font-size:1.15em;line-height:1.4;max-width:26em}
+.pivot p{margin:0;font-size:1.08em;font-weight:500;line-height:1.4;max-width:26em;color:var(--ink)}
 
-.toc{border:1px solid var(--rule);background:#fff;margin:2rem 0 0}
+.toc{border:1px solid var(--rule);background:#fff;margin:2rem 0 0;border-radius:14px;overflow:hidden}
 .toc-h{background:var(--tint);color:var(--petrol);border-bottom:1px solid var(--rule);padding:.7rem 1.1rem;font-family:"IBM Plex Mono",monospace;font-size:.62em;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
 .toc a{display:flex;gap:1rem;align-items:baseline;padding:.95rem 1.1rem;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
 .toc a:last-child{border-bottom:0}
@@ -154,17 +154,17 @@ input[type=range]:focus-visible{outline:3px solid var(--ochre);outline-offset:3p
 .verdict{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:1.1em;margin-top:1rem;display:block}
 .verdict.bad{color:var(--clay)} .verdict.ok{color:var(--moss)}
 
-.note{background:var(--card);border-left:4px solid var(--petrol);padding:1.1rem 1.25rem;margin:1.6rem 0}
-.note.warn{border-left-color:var(--clay)}
-.note.good{border-left-color:var(--moss)}
-.note.hold{border-left-color:var(--ochre)}
+.note{background:var(--tint);border-left:5px solid var(--petrol);padding:1.1rem 1.25rem;margin:1.6rem 0;border-radius:14px}
+.note.warn{border-left-color:var(--clay);background:#FDECEF}
+.note.good{border-left-color:var(--moss);background:#E7F6EF}
+.note.hold{border-left-color:var(--ochre);background:#FDF3E3}
 .note p{margin:0;max-width:none}
 .note p+p{margin-top:.7rem}
 .note-label{font-family:"IBM Plex Mono",monospace;font-size:.56em;letter-spacing:.13em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:.4rem;color:var(--petrol)}
 .warn .note-label{color:var(--clay)} .good .note-label{color:var(--moss)} .hold .note-label{color:var(--ochre)}
 
-.opt{border:1px solid var(--rule);background:#fff;margin-bottom:.9rem;scroll-margin-top:76px}
-.opt[open]{border-color:var(--petrol);background:var(--card)}
+.opt{border:1px solid var(--rule);background:#fff;margin-bottom:.9rem;scroll-margin-top:76px;border-radius:12px}
+.opt[open]{border-color:var(--petrol);background:#fff}
 .opt summary{cursor:pointer;padding:1rem 1.2rem;font-weight:600;list-style:none;display:flex;gap:.85rem;align-items:baseline;min-height:52px}
 .opt summary::-webkit-details-marker{display:none}
 .opt summary::before{content:"+";font-family:"IBM Plex Mono",monospace;font-weight:700;color:var(--ochre);flex:none;font-size:1.1em}
@@ -177,14 +177,14 @@ input[type=range]:focus-visible{outline:3px solid var(--ochre);outline-offset:3p
 .spec th{text-align:left;width:38%;font-weight:600;padding:.5rem .6rem .5rem 0;border-bottom:1px solid var(--rule);vertical-align:top;font-family:"IBM Plex Sans",sans-serif;font-size:1em;letter-spacing:0;text-transform:none;color:var(--ink-soft)}
 .spec td{padding:.5rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
 .spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
-.vd{padding:.8rem 1rem;font-size:.85em;line-height:1.55;border-left:4px solid var(--petrol);background:var(--card)}
-.vd.good{border-left-color:var(--moss)} .vd.bad{border-left-color:var(--clay)} .vd.hold{border-left-color:var(--ochre)}
+.vd{padding:.85rem 1.05rem;font-size:.85em;line-height:1.55;border-left:5px solid var(--petrol);background:var(--card);border-radius:10px}
+.vd.good{border-left-color:var(--moss);background:#E7F6EF} .vd.bad{border-left-color:var(--clay);background:#FDECEF} .vd.hold{border-left-color:var(--ochre);background:#FDF3E3}
 .vd b{display:block;font-family:"IBM Plex Mono",monospace;font-size:.72em;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;color:var(--petrol)}
 .vd.good b{color:var(--moss)} .vd.bad b{color:var(--clay)} .vd.hold b{color:var(--ochre)}
 
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
-.ccard{background:#fff;border:1px solid var(--rule);padding:1.25rem}
-.ccard.pick{border-color:var(--moss);border-width:2px;background:#F6FAF7}
+.ccard{background:#fff;border:1px solid var(--rule);padding:1.25rem;border-radius:14px}
+.ccard.pick{border-color:var(--moss);border-width:2px;background:#E7F6EF}
 .ccard h4{margin:0 0 .3rem;font-size:1.02em;font-weight:600}
 .picktag{font-family:"IBM Plex Mono",monospace;font-size:.6em;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--moss);display:block;margin-bottom:.7rem}
 .ccard ul{list-style:none;padding:0;margin:.6rem 0 0}
@@ -198,7 +198,7 @@ input[type=range]:focus-visible{outline:3px solid var(--ochre);outline-offset:3p
 .rhythm{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:1.1rem 0;min-width:340px}
 .rc{padding:.75rem .1rem;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.62em;font-weight:700;line-height:1.2}
 .rc.syd{background:var(--petrol);color:#fff}
-.rc.esv{background:var(--tint);color:var(--petrol);border:1px solid #D6E2E4}
+.rc.esv{background:var(--tint);color:var(--petrol);border:1px solid #A7DBD6}
 .rc.star{background:var(--moss);color:#fff}
 
 ol.checks{list-style:none;padding:0;margin:1.35rem 0;counter-reset:c}
@@ -214,12 +214,12 @@ footer{padding:2.5rem 0 1rem;font-size:.76em;color:var(--ink-soft);border-top:1p
 footer p{max-width:34em}
 
 @media (prefers-color-scheme: dark){
-  :root{--paper:#FFFFFF;--card:#F8F9F8;--ink:#1A222A;--ink-soft:#5A6670;--rule:#E3E5E2;--tint:#F3F7F7}
-  html,body{background:#FFFFFF !important;color:#1A222A !important}
+  :root{--paper:#FFFFFF;--card:#F8F9F8;--ink:#0B1220;--ink-soft:#64748B;--rule:#E3E5E2;--tint:#E6F6F4}
+  html,body{background:#FFFFFF !important;color:#0B1220 !important}
   .bar{background:#FFFFFF !important}
-  .hero{background:#F3F7F7 !important}
+  .hero{background:#E6F6F4 !important}
   .ccard,.opt,.toc,.rank{background:#FFFFFF !important}
-  .ctrl button[aria-pressed="true"]{background:#1A222A !important;color:#FFFFFF !important}
+  .ctrl button[aria-pressed="true"]{background:#0B1220 !important;color:#FFFFFF !important}
 }
 </style>
 </head>
@@ -250,12 +250,19 @@ footer p{max-width:34em}
   <div class="kpis">
     <div class="kpi"><span class="n">0</span><span class="l"><span class="fr">limite d'âge pour le visa de conjoint</span><span class="en">age limit on the partner visa</span></span></div>
     <div class="kpi"><span class="n">18–30</span><span class="l"><span class="fr">mois de traitement, dérogation comprise</span><span class="en">months to process, waiver included</span></span></div>
-    <div class="kpi"><span class="n">23–32 k$</span><span class="l"><span class="fr">budget total du dossier, avocat compris</span><span class="en">total application budget, lawyer included</span></span></div>
+    <div class="kpi"><span class="n">18 k$</span><span class="l"><span class="fr">budget total du dossier, avocat compris</span><span class="en">total application budget, lawyer included</span></span></div>
+  </div>
+
+  <div class="bigwarn green">
+    <span class="lab"><span class="fr">Nouveau — et ça change beaucoup</span><span class="en">New — and it changes a great deal</span></span>
+    <p><span class="fr"><strong>Pour les demandeurs de 75 ans et plus, le coût des soins est évalué sur trois ans seulement</strong> — pas cinq, pas dix.</span><span class="en"><strong>For applicants aged 75 and over, care costs are assessed over three years only</strong> — not five, not ten.</span></p>
+    <p><span class="fr">Sur trois ans, les injections représentent environ 45 000 à 58 000 A$, contre un seuil de 86 000 A$. Le dossier pourrait donc passer <strong>sans aucune dérogation</strong>, ce qui diviserait aussi les honoraires d'avocat par deux.</span><span class="en">Over three years the injections come to roughly A$45,000–58,000, against a threshold of A$86,000. The case could therefore pass <strong>with no waiver at all</strong>, which would also halve the lawyer's fees.</span></p>
+    <p><span class="fr"><strong>La réserve :</strong> une affection permanente à évolution prévisible peut être évaluée sur dix ans, et la DMLA entre dans cette catégorie. Trois ans ou dix ans — c'est la première question à faire trancher par l'avocat.</span><span class="en"><strong>The caveat:</strong> a permanent condition with a predictable course can be assessed over ten years, and AMD falls into that category. Three years or ten — that is the first question for the lawyer to settle.</span></p>
   </div>
 
   <div class="bigwarn">
     <span class="lab"><span class="fr">À lire avant tout le reste</span><span class="en">Read before anything else</span></span>
-    <p><span class="fr"><strong>Les 23 000 à 32 000 A$ achètent le droit d'être examiné, pas le droit d'entrer.</strong></span><span class="en"><strong>The A$23,000–32,000 buys the right to be assessed, not the right to enter.</strong></span></p>
+    <p><span class="fr"><strong>Et si la dérogation est tout de même nécessaire : l'argent achète le droit d'être examiné, pas le droit d'entrer.</strong></span><span class="en"><strong>And if a waiver is needed after all: the money buys the right to be assessed, not the right to enter.</strong></span></p>
     <p><span class="fr">L'Australie ne regarde pas ce qu'on a payé. Elle calcule ce que les injections coûteraient à son système de santé sur les années à venir. Si le total dépasse le seuil et que la dérogation est refusée, l'argent est perdu — aucun remboursement.</span><span class="en">Australia does not look at what has been paid. It calculates what the injections would cost its health system over the coming years. If the total exceeds the threshold and the waiver is refused, the money is gone — no refund.</span></p>
     <p><span class="fr">Et même si la famille s'engage par écrit à payer les soins en privé, le médecin du ministère chiffre quand même le coût pour la collectivité. Cet engagement compte comme argument de compassion, mais il n'efface pas le chiffre.</span><span class="en">And even if the family undertakes in writing to pay for care privately, the department's doctor still costs it to the community. That undertaking counts as a compassionate argument, but it does not erase the figure.</span></p>
   </div>
@@ -306,7 +313,7 @@ footer p{max-width:34em}
       <span class="rtitle"><span class="fr">Visa de conjoint déposé depuis l'Australie</span><span class="en">Partner visa lodged from Australia</span></span>
       <span class="rwhy"><span class="fr">Vous êtes ici tout de suite, et Medicare couvre les injections dès le dépôt du dossier — pas dans deux ans.</span><span class="en">You are here immediately, and Medicare covers the injections from lodgement — not in two years.</span></span>
       <span class="chips">
-        <span class="chip">23–32 k$</span>
+        <span class="chip">18 k$</span>
         <span class="chip"><span class="fr">18–30 mois</span><span class="en">18–30 months</span></span>
         <span class="chip"><span class="fr">Medicare dès le dépôt</span><span class="en">Medicare from lodgement</span></span>
         <span class="chip"><span class="fr">peut être refusé</span><span class="en">can be refused</span></span>
@@ -319,7 +326,7 @@ footer p{max-width:34em}
           <li class="y"><span class="fr">Plus de vols, plus d'au revoir</span><span class="en">No more flights, no more goodbyes</span></li>
         </ul>
         <ul>
-          <li class="n"><span class="fr">23 000 à 32 000 A$, non remboursables même en cas de refus</span><span class="en">A$23,000–32,000, non-refundable even if refused</span></li>
+          <li class="n"><span class="fr">18 000 A$, non remboursables même en cas de refus</span><span class="en">A$18,000, non-refundable even if refused</span></li>
           <li class="n"><span class="fr">Dépend d'une dérogation médicale, jamais garantie</span><span class="en">Depends on a health waiver, never guaranteed</span></li>
           <li class="n"><span class="fr">Le visa d'entrée ne doit pas porter la mention 8503</span><span class="en">The entry visa must not carry condition 8503</span></li>
           <li class="n"><span class="fr">Vous perdez la prise en charge française à 100 %</span><span class="en">You lose the 100% French cover</span></li>
@@ -332,7 +339,7 @@ footer p{max-width:34em}
       <span class="rtitle"><span class="fr">Visa de conjoint déposé depuis la Guadeloupe</span><span class="en">Partner visa lodged from Guadeloupe</span></span>
       <span class="rwhy"><span class="fr">Juridiquement plus simple, mais vous attendez deux ans là-bas. À retenir seulement si l'option 2 se révèle impossible.</span><span class="en">Legally simpler, but you wait two years there. Only if option 2 proves impossible.</span></span>
       <span class="chips">
-        <span class="chip">23–32 k$</span>
+        <span class="chip">18 k$</span>
         <span class="chip"><span class="fr">18–30 mois d'attente</span><span class="en">18–30 months waiting</span></span>
         <span class="chip"><span class="fr">séparés pendant l'attente</span><span class="en">apart while waiting</span></span>
       </span>
@@ -400,9 +407,10 @@ footer p{max-width:34em}
     <div class="toc-h"><span class="fr">Le détail, section par section</span><span class="en">The detail, section by section</span></div>
     <a href="#s1"><span class="tn">01</span><span><span class="tt"><span class="fr">Le calendrier</span><span class="en">The timeline</span></span><span class="ts"><span class="fr">Ce qui se passe, et quand.</span><span class="en">What happens, and when.</span></span></span><span class="tag hold">18–30 <span class="fr">mois</span><span class="en">mo</span></span></a>
     <a href="#s2"><span class="tn">02</span><span><span class="tt"><span class="fr">Toutes les options</span><span class="en">All the options</span></span><span class="ts"><span class="fr">Sept voies détaillées, y compris rester à Esvres.</span><span class="en">Seven routes in detail, including staying at Esvres.</span></span></span><span class="tag ok">7 <span class="fr">voies</span><span class="en">routes</span></span></a>
-    <a href="#s3"><span class="tn">03</span><span><span class="tt"><span class="fr">L'examen de santé</span><span class="en">The health assessment</span></span><span class="ts"><span class="fr">Le seuil, la dérogation, et le seul vrai levier.</span><span class="en">The threshold, the waiver, and the only real lever.</span></span></span><span class="tag warn"><span class="fr">Dérogation</span><span class="en">Waiver</span></span></a>
+    <a href="#s3"><span class="tn">03</span><span><span class="tt"><span class="fr">L'examen de santé</span><span class="en">The health assessment</span></span><span class="ts"><span class="fr">Le seuil, la règle des trois ans après 75 ans, et la dérogation.</span><span class="en">The threshold, the three-year rule after 75, and the waiver.</span></span></span><span class="tag ok">3 <span class="fr">ans</span><span class="en">yrs</span></span></a>
     <a href="#s4"><span class="tn">04</span><span><span class="tt"><span class="fr">Vos droits, étape par étape</span><span class="en">Entitlements, stage by stage</span></span><span class="ts"><span class="fr">Presque tout se débloque à la résidence permanente.</span><span class="en">Almost everything unlocks at permanent residence.</span></span></span></a>
-    <a href="#s5"><span class="tn">05</span><span><span class="tt"><span class="fr">Le coût et l'avocat</span><span class="en">Cost and lawyer</span></span><span class="ts"><span class="fr">Le détail des honoraires, poste par poste.</span><span class="en">Fees broken down, item by item.</span></span></span><span class="tag warn">23–32 k$</span></a>
+    <a href="#s5"><span class="tn">05</span><span><span class="tt"><span class="fr">Le coût et l'avocat</span><span class="en">Cost and lawyer</span></span><span class="ts"><span class="fr">Le détail des honoraires, poste par poste.</span><span class="en">Fees broken down, item by item.</span></span></span><span class="tag warn">18 k$</span></a>
+    <a href="#s5b"><span class="tn">05b</span><span><span class="tt"><span class="fr">Examens médicaux et casiers</span><span class="en">Medical and police checks</span></span><span class="ts"><span class="fr">Obligatoires, valables 12 mois, et à payer en plus.</span><span class="en">Compulsory, valid 12 months, and paid on top.</span></span></span><span class="tag hold">+1–1,6 k$</span></a>
     <a href="#s6"><span class="tn">06</span><span><span class="tt"><span class="fr">Le budget à Sydney</span><span class="en">The Sydney budget</span></span><span class="ts"><span class="fr">Environ 1 000 $ manquants par mois au prix du marché.</span><span class="en">About A$1,000 a month short at market rent.</span></span></span><span class="tag warn">−1 000 $</span></a>
     <a href="#s7"><span class="tn">07</span><span><span class="tt"><span class="fr">Ce dont nous avons besoin</span><span class="en">What we need</span></span><span class="ts"><span class="fr">Neuf choses à rassembler de votre côté.</span><span class="en">Nine things to gather at your end.</span></span></span></a>
     <a href="#s8"><span class="tn">08</span><span><span class="tt"><span class="fr">Les prochaines semaines</span><span class="en">The coming weeks</span></span><span class="ts"><span class="fr">Rien n'est engagé avant qu'on en parle ensemble.</span><span class="en">Nothing is committed before we talk it through.</span></span></span></a>
@@ -436,7 +444,7 @@ footer p{max-width:34em}
       <span class="sub"><span class="fr">Quelques centaines de dollars pour estimer où se situerait la projection. C'est ce qui évite un pari à 20 000.</span><span class="en">A few hundred dollars to estimate where the projection would land. This is what avoids a A$20,000 gamble.</span></span></li>
     <li><span class="dot">3</span><span class="when"><span class="fr">Mois 1 à 3</span><span class="en">Month 1–3</span></span>
       <span class="what"><span class="fr">Avocat, puis dépôt du dossier</span><span class="en">Lawyer, then lodgement</span></span>
-      <span class="sub"><span class="fr">Le mémoire de dérogation se prépare <em>avant</em> le dépôt. Les 11 710 A$ sont réglés à ce moment-là, et ne sont jamais remboursés.</span><span class="en">The waiver submission is prepared <em>before</em> lodging. The A$11,710 is paid at this point, and never refunded.</span></span></li>
+      <span class="sub"><span class="fr">Le mémoire de dérogation se prépare <em>avant</em> le dépôt. Les 12 000 A$ sont réglés à ce moment-là, et ne sont jamais remboursés.</span><span class="en">The waiver submission is prepared <em>before</em> lodging. The A$12,000 is paid at this point, and never refunded.</span></span></li>
     <li><span class="dot">4</span><span class="when"><span class="fr">Mois 3 à 5</span><span class="en">Month 3–5</span></span>
       <span class="what"><span class="fr">Examen médical et casier judiciaire</span><span class="en">Medical exam and police certificate</span></span>
       <span class="sub"><span class="fr">Chez un médecin agréé par l'Australie. Il n'y en a peut-être pas en Guadeloupe — nous vérifions.</span><span class="en">With an Australia-approved doctor. There may not be one in Guadeloupe — we are checking.</span></span></li>
@@ -477,13 +485,13 @@ footer p{max-width:34em}
         <td><strong>A · <span class="fr">Conjoint 309/100, depuis la Guadeloupe</span><span class="en">Partner 309/100, from Guadeloupe</span></strong></td>
         <td><span class="fr">Définitif, après l'octroi</span><span class="en">Permanent, after grant</span></td>
         <td class="mark no">✕<small><span class="fr">après octroi</span><span class="en">after grant</span></small></td>
-        <td class="mark yes">✓</td><td class="num">11 710 $</td>
+        <td class="mark yes">✓</td><td class="num">12 000 $</td>
       </tr>
       <tr class="hi">
         <td><strong>B · <span class="fr">Conjoint 820/801, depuis l'Australie</span><span class="en">Partner 820/801, from Australia</span></strong></td>
         <td><span class="fr">Continu, visa transitoire</span><span class="en">Continuous, bridging visa</span></td>
         <td class="mark yes">✓<small><span class="fr">dès le dépôt</span><span class="en">from lodgement</span></small></td>
-        <td class="mark yes">✓</td><td class="num">11 710 $</td>
+        <td class="mark yes">✓</td><td class="num">12 000 $</td>
       </tr>
       <tr>
         <td><strong>C · eVisitor 651</strong></td>
@@ -530,7 +538,7 @@ footer p{max-width:34em}
         <tr><th><span class="fr">Qui parraine</span><span class="en">Sponsor</span></th><td><span class="fr">L'épouse, citoyenne australienne</span><span class="en">The wife, Australian citizen</span></td></tr>
         <tr><th><span class="fr">Où déposer</span><span class="en">Where to lodge</span></th><td><span class="fr">Hors d'Australie, et être <strong>hors d'Australie le jour de la décision</strong>.</span><span class="en">Outside Australia, and be <strong>outside Australia on decision day</strong>.</span></td></tr>
         <tr><th><span class="fr">Mariage ancien</span><span class="en">Long marriage</span></th><td><span class="fr">Permet l'octroi <strong>direct du 100 permanent</strong></span><span class="en">Allows <strong>direct grant of the permanent 100</strong></span></td></tr>
-        <tr><th><span class="fr">Frais</span><span class="en">Charge</span></th><td><span class="fr">11 710 A$ — un seul paiement, non remboursable</span><span class="en">A$11,710 — single payment, non-refundable</span></td></tr>
+        <tr><th><span class="fr">Frais</span><span class="en">Charge</span></th><td><span class="fr">12 000 A$ — un seul paiement, non remboursable</span><span class="en">A$12,000 — single payment, non-refundable</span></td></tr>
         <tr><th><span class="fr">Délai</span><span class="en">Timeframe</span></th><td><span class="fr">18 à 30 mois, dérogation comprise</span><span class="en">18 to 30 months, waiver included</span></td></tr>
         <tr><th><span class="fr">Exigence de santé</span><span class="en">Health criterion</span></th><td><span class="fr">Critère 4007 — <strong>dérogation possible</strong>, mais jamais garantie</span><span class="en">Criterion 4007 — <strong>waiver available</strong>, but never guaranteed</span></td></tr>
         <tr><th>Medicare</th><td><span class="fr">Non pendant l'attente. Oui après l'octroi.</span><span class="en">No during the wait. Yes after grant.</span></td></tr>
@@ -551,7 +559,7 @@ footer p{max-width:34em}
         <tr><th><span class="fr">Séjour pendant l'attente</span><span class="en">Stay while waiting</span></th><td><span class="fr">Visa transitoire (bridging visa A) — séjour légal continu</span><span class="en">Bridging visa A — continuous lawful stay</span></td></tr>
         <tr><th>Medicare</th><td><span class="fr"><strong>Oui, dès le dépôt</strong> — conjoint d'une citoyenne australienne, demande de visa permanent en cours</span><span class="en"><strong>Yes, from lodgement</strong> — spouse of an Australian citizen, permanent visa application pending</span></td></tr>
         <tr><th><span class="fr">Injections</span><span class="en">Injections</span></th><td><span class="fr">Sur le PBS dès l'inscription à Medicare — reste à charge modeste</span><span class="en">On the PBS from Medicare enrolment — modest out-of-pocket</span></td></tr>
-        <tr><th><span class="fr">Frais</span><span class="en">Charge</span></th><td><span class="fr">11 710 A$ + avocat. Perdus en cas de refus.</span><span class="en">A$11,710 + lawyer. Lost if refused.</span></td></tr>
+        <tr><th><span class="fr">Frais</span><span class="en">Charge</span></th><td><span class="fr">12 000 A$ + avocat. Perdus en cas de refus.</span><span class="en">A$12,000 + lawyer. Lost if refused.</span></td></tr>
         <tr><th><span class="fr">Exigence de santé</span><span class="en">Health criterion</span></th><td><span class="fr">Critère 4007 — dérogation possible, mais discrétionnaire</span><span class="en">Criterion 4007 — waiver available, but discretionary</span></td></tr>
         <tr><th><span class="fr">Ce qu'on abandonne</span><span class="en">What is given up</span></th><td><span class="fr">La prise en charge française à 100 %. Même avec Medicare et le PBS, il reste toujours un peu à payer en Australie.</span><span class="en">French cover at 100%. Even with Medicare and the PBS, something is always left to pay in Australia.</span></td></tr>
         <tr><th><span class="fr">Le risque</span><span class="en">The risk</span></th><td><span class="fr">Entrer en visiteur avec l'intention de rester est examiné de près à la frontière. À préparer avec l'avocat.</span><span class="en">Entering as a visitor intending to stay is closely examined at the border. To be prepared with the lawyer.</span></td></tr>
@@ -624,7 +632,7 @@ footer p{max-width:34em}
     <div class="obody">
       <table class="spec">
         <tr><th><span class="fr">Démarches</span><span class="en">Formalities</span></th><td><span class="fr"><strong>Aucune.</strong> La Guadeloupe et Esvres, c'est la France : un déménagement, pas une émigration.</span><span class="en"><strong>None.</strong> Guadeloupe and Esvres are both France: a house move, not an emigration.</span></td></tr>
-        <tr><th><span class="fr">Frais</span><span class="en">Cost</span></th><td><span class="fr">Zéro visa, zéro avocat. Les 23 000 à 32 000 A$ restent sur le compte, et aucun risque de les perdre.</span><span class="en">No visa, no lawyer. The A$23,000–32,000 stays in the bank, with no risk of losing it.</span></td></tr>
+        <tr><th><span class="fr">Frais</span><span class="en">Cost</span></th><td><span class="fr">Zéro visa, zéro avocat. Les 18 000 A$ restent sur le compte, et aucun risque de les perdre.</span><span class="en">No visa, no lawyer. The A$18,000 stays in the bank, with no risk of losing it.</span></td></tr>
         <tr><th><span class="fr">Santé</span><span class="en">Health</span></th><td><span class="fr">Prise en charge à <strong>100 %</strong> — médicaments, spécialiste, hôpital, radiologie. Rien à payer, jamais.</span><span class="en">Cover at <strong>100%</strong> — medicines, specialist, hospital, imaging. Nothing to pay, ever.</span></td></tr>
         <tr><th><span class="fr">Logement</span><span class="en">Housing</span></th><td><span class="fr">Vous êtes propriétaires. Plus de loyer nulle part — c'est le poste qui rend Sydney difficile.</span><span class="en">You own it. No rent anywhere — the item that makes Sydney difficult.</span></td></tr>
         <tr><th><span class="fr">Vieillir</span><span class="en">Growing older</span></th><td><span class="fr">Accès immédiat à l'APA, aux aides à domicile et aux EHPAD. En Australie, tout cela attend la résidence permanente.</span><span class="en">Immediate access to French home-care allowances and care homes. In Australia, all of that waits for permanent residence.</span></td></tr>
@@ -649,16 +657,16 @@ footer p{max-width:34em}
       </div>
     </div>
     <div class="legend">
-      <span><i class="sw" style="background:#28616F"></i><span class="fr">Chez nous à Sydney</span><span class="en">With us in Sydney</span></span>
-      <span><i class="sw" style="background:#F3F7F7;border:1px solid #D6E2E4"></i><span class="fr">Chez vous à Esvres</span><span class="en">At home in Esvres</span></span>
-      <span><i class="sw" style="background:#3B6B4F"></i><span class="fr">Nous venons en Europe</span><span class="en">We come to Europe</span></span>
+      <span><i class="sw" style="background:#0D7D77"></i><span class="fr">Chez nous à Sydney</span><span class="en">With us in Sydney</span></span>
+      <span><i class="sw" style="background:#E6F6F4;border:1px solid #A7DBD6"></i><span class="fr">Chez vous à Esvres</span><span class="en">At home in Esvres</span></span>
+      <span><i class="sw" style="background:#047857"></i><span class="fr">Nous venons en Europe</span><span class="en">We come to Europe</span></span>
     </div>
   </div>
 
   <div class="note hold">
     <span class="note-label"><span class="fr">Le seul point à caler — le rythme des injections</span><span class="en">The one thing to settle — the injection interval</span></span>
     <p><span class="fr">C'est l'intervalle entre deux injections qui fixe la durée possible de chaque séjour. S'il est passé à dix ou douze semaines, trois mois tiennent sans rien manquer. S'il est encore de quatre à huit semaines, il faudrait une ou deux injections sur place, à environ 1 200 à 2 000 A$ chacune.</span><span class="en">The interval between injections sets how long each stay can be. If it has stretched to ten or twelve weeks, three months works with nothing missed. If it is still four to eight weeks, one or two injections would be needed here, at roughly A$1,200–2,000 each.</span></p>
-    <p><span class="fr">Soit, au pire, <strong>2 500 à 4 000 A$ par an</strong> — à comparer aux 23 000 à 32 000 A$ du dossier de visa, qui peuvent être perdus. C'est une dépense, pas un pari.</span><span class="en">At worst, <strong>A$2,500–4,000 a year</strong> — against A$23,000–32,000 for the visa, which can be lost. That is an expense, not a gamble.</span></p>
+    <p><span class="fr">Soit, au pire, <strong>2 500 à 4 000 A$ par an</strong> — à comparer aux 18 000 A$ du dossier de visa, qui peuvent être perdus. C'est une dépense, pas un pari.</span><span class="en">At worst, <strong>A$2,500–4,000 a year</strong> — against A$18,000 for the visa, which can be lost. That is an expense, not a gamble.</span></p>
   </div>
 
   <div class="note good">
@@ -683,6 +691,29 @@ footer p{max-width:34em}
       <div class="btop"><span><strong><span class="fr">DMLA humide — injections régulières</span><span class="en">Wet AMD — regular injections</span></strong></span><b class="no"><span class="fr">dépasse le seuil</span><span class="en">over threshold</span></b></div>
       <div class="btrack"><div class="bfill clay" style="width:100%"></div></div>
     </div>
+  </div>
+
+  <h3><span class="fr">La durée d'évaluation — le point décisif</span><span class="en">The assessment period — the decisive point</span></h3>
+  <p><span class="fr">Le seuil ne dit rien à lui seul : tout dépend du nombre d'années sur lesquelles le coût est projeté.</span><span class="en">The threshold means nothing on its own: everything depends on how many years the cost is projected over.</span></p>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr>
+      <th><span class="fr">Profil du demandeur</span><span class="en">Applicant profile</span></th>
+      <th class="num"><span class="fr">Durée</span><span class="en">Period</span></th>
+    </tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong><span class="fr">75 ans et plus</span><span class="en">Aged 75 and over</span></strong></td><td class="num"><strong>3 <span class="fr">ans</span><span class="en">years</span></strong></td></tr>
+      <tr><td><span class="fr">Tous les autres demandeurs permanents</span><span class="en">All other permanent applicants</span></td><td class="num">5 <span class="fr">ans</span><span class="en">years</span></td></tr>
+      <tr><td><span class="fr">Affection permanente à évolution prévisible</span><span class="en">Permanent condition with a predictable course</span></td><td class="num"><span class="fr">jusqu'à</span><span class="en">up to</span> 10</td></tr>
+      <tr><td><span class="fr">Espérance de vie réduite prévisible</span><span class="en">Predictably reduced life expectancy</span></td><td class="num"><span class="fr">jusqu'à</span><span class="en">up to</span> 10</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="bigwarn green">
+    <span class="lab"><span class="fr">Les deux scénarios chiffrés</span><span class="en">The two scenarios, costed</span></span>
+    <p><span class="fr"><strong>Sur trois ans :</strong> 27 à 39 injections, soit environ 45 000 à 58 000 A$. Sous le seuil de 86 000 A$ — aucune dérogation nécessaire.</span><span class="en"><strong>Over three years:</strong> 27 to 39 injections, roughly A$45,000–58,000. Under the A$86,000 threshold — no waiver needed.</span></p>
+    <p><span class="fr"><strong>Sur dix ans :</strong> largement au-delà de 150 000 A$. La dérogation redevient indispensable, et le dossier bien plus incertain.</span><span class="en"><strong>Over ten years:</strong> well beyond A$150,000. A waiver becomes essential again, and the case far less certain.</span></p>
+    <p><span class="fr">C'est l'unique question à poser en premier à l'avocat : <em>un demandeur de 78 ans atteint de DMLA humide est-il évalué sur trois ans au titre de son âge, ou sur dix au titre du caractère permanent de l'affection ?</em></span><span class="en">This is the single first question for the lawyer: <em>is a 78-year-old with wet AMD assessed over three years on account of age, or over ten on account of the condition being permanent?</em></span></p>
   </div>
 
   <div class="bigwarn">
@@ -766,7 +797,7 @@ footer p{max-width:34em}
     <caption><span class="fr">Frais officiels — incompressibles et non remboursables</span><span class="en">Official charges — unavoidable and non-refundable</span></caption>
     <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th class="num">AUD</th><th class="num">EUR</th></tr></thead>
     <tbody>
-      <tr><td><span class="fr">Frais gouvernementaux du visa de conjoint</span><span class="en">Government partner visa charge</span></td><td class="num">11 710</td><td class="num">~7 200</td></tr>
+      <tr><td><span class="fr">Frais gouvernementaux du visa de conjoint</span><span class="en">Government partner visa charge</span></td><td class="num">12 000</td><td class="num">~7 200</td></tr>
       <tr><td><span class="fr">Examens médicaux</span><span class="en">Medical examinations</span></td><td class="num">600 – 900</td><td class="num">~400 – 550</td></tr>
       <tr><td><span class="fr">Casier judiciaire (Bulletin n° 3)</span><span class="en">Police certificate</span></td><td class="num"><span class="fr">gratuit</span><span class="en">free</span></td><td class="num">—</td></tr>
       <tr><td><span class="fr">Traductions certifiées — état civil</span><span class="en">Certified translations — civil documents</span></td><td class="num">300 – 500</td><td class="num">~180 – 300</td></tr>
@@ -799,7 +830,7 @@ footer p{max-width:34em}
       <tr class="hi">
         <td><strong><span class="fr">Avocat en immigration, avec dérogation</span><span class="en">Immigration lawyer, with waiver</span></strong></td>
         <td><span class="fr">Dossier complet <strong>plus</strong> le mémoire juridique : argumentation, circonstances familiales, engagement de prise en charge. <strong>C'est notre cas.</strong></span><span class="en">Full application <strong>plus</strong> the legal submission: argument, family circumstances, undertaking of support. <strong>This is our case.</strong></span></td>
-        <td class="num"><strong>8 000 – 15 000</strong></td>
+        <td class="num"><strong>6 000 maximum</strong></td>
       </tr>
       <tr>
         <td><span class="fr">Rapport médical indépendant</span><span class="en">Independent medical report</span></td>
@@ -816,9 +847,9 @@ footer p{max-width:34em}
   </div>
 
   <div class="bars">
-    <div class="brow"><div class="btop"><span><span class="fr">Frais officiels</span><span class="en">Official charges</span></span><b>~13 500 $</b></div><div class="btrack"><div class="bfill soft" style="width:42%"></div></div></div>
-    <div class="brow"><div class="btop"><span><span class="fr">Avocat et rapports médicaux</span><span class="en">Lawyer and medical reports</span></span><b>9 500 – 18 000 $</b></div><div class="btrack"><div class="bfill ochre" style="width:56%"></div></div></div>
-    <div class="brow"><div class="btop"><span><strong><span class="fr">Budget total à prévoir</span><span class="en">Total budget</span></strong></span><b>23 000 – 32 000 $</b></div><div class="btrack"><div class="bfill clay" style="width:100%"></div></div></div>
+    <div class="brow"><div class="btop"><span><span class="fr">Frais officiels</span><span class="en">Official charges</span></span><b>~13 500 $</b></div><div class="btrack"><div class="bfill soft" style="width:75%"></div></div></div>
+    <div class="brow"><div class="btop"><span><span class="fr">Avocat et rapports médicaux</span><span class="en">Lawyer and medical reports</span></span><b>6 000 $ max</b></div><div class="btrack"><div class="bfill ochre" style="width:33%"></div></div></div>
+    <div class="brow"><div class="btop"><span><strong><span class="fr">Budget total à prévoir</span><span class="en">Total budget</span></strong></span><b>18 000 $</b></div><div class="btrack"><div class="bfill clay" style="width:100%"></div></div></div>
     <div class="brow"><div class="btop"><span><strong><span class="fr">Ce qu'on récupère en cas de refus</span><span class="en">Recovered if refused</span></strong></span><b class="no">0 $</b></div><div class="btrack"><div class="bfill" style="width:0%"></div></div></div>
   </div>
 
@@ -826,6 +857,48 @@ footer p{max-width:34em}
     <span class="note-label"><span class="fr">Comment choisir l'avocat</span><span class="en">How to choose the lawyer</span></span>
     <p><span class="fr">Demandez un <strong>forfait fixe et écrit</strong>, pas une facturation à l'heure, et vérifiez que le cabinet a déjà <strong>obtenu</strong> des dérogations médicales — posez la question directement. Les frais gouvernementaux ne sont pas remboursables : c'est précisément pour cela que le mémoire doit être solide dès le premier dépôt.</span><span class="en">Ask for a <strong>fixed written fee</strong>, not hourly billing, and check the firm has actually <strong>obtained</strong> health waivers — ask directly. The government charge is non-refundable: which is why the submission must be strong at first lodgement.</span></p>
   </div>
+  <a class="backtop" href="#top"><span class="fr">↑ Retour au sommaire</span><span class="en">↑ Back to contents</span></a>
+</section>
+
+<section id="s5b">
+  <span class="eyebrow"><span class="fr">05b — Les examens obligatoires</span><span class="en">05b — The compulsory checks</span></span>
+  <h2><span class="fr">Examen médical et casiers judiciaires</span><span class="en">Medical examination and police checks</span></h2>
+
+  <p><span class="fr">Deux pièces obligatoires, distinctes du compte rendu de l'ophtalmologue, et dont les frais ne sont couverts ni par les frais gouvernementaux ni par les honoraires de l'avocat.</span><span class="en">Two compulsory items, separate from the ophthalmologist's report, whose costs are covered neither by the government charge nor by the lawyer's fee.</span></p>
+
+  <div class="note">
+    <span class="note-label"><span class="fr">L'examen médical officiel</span><span class="en">The official medical</span></span>
+    <p><span class="fr">Examen complet, radio des poumons et test sanguin, <strong>chez un médecin agréé par l'Australie</strong> — pas n'importe quel médecin. La liste est sur <strong>immi.homeaffairs.gov.au</strong>, outil « Find a panel physician ».</span><span class="en">Full examination, chest X-ray and blood test, <strong>with a doctor approved by Australia</strong> — not just any doctor. The list is at <strong>immi.homeaffairs.gov.au</strong>, the "Find a panel physician" tool.</span></p>
+    <p><span class="fr">Réalisable <strong>en France lors d'un séjour</strong> ou en Australie. Il n'y a probablement pas de cabinet agréé en Guadeloupe — à vérifier sur ce site.</span><span class="en">Can be done <strong>in France during a trip</strong> or in Australia. There is probably no approved clinic in Guadeloupe — to be checked on that site.</span></p>
+    <p><span class="fr">Le résultat est <strong>valable douze mois</strong>. Il ne faut donc pas le faire trop tôt, sous peine de devoir le refaire et de le repayer.</span><span class="en">The result is <strong>valid for twelve months</strong>. So it must not be done too early, or it has to be repeated and paid for again.</span></p>
+  </div>
+
+  <div class="note">
+    <span class="note-label"><span class="fr">Les casiers judiciaires</span><span class="en">The police checks</span></span>
+    <p><span class="fr">Un certificat est exigé <strong>pour chaque pays où le demandeur a vécu douze mois ou plus, cumulés, au cours des dix dernières années</strong>. Pour le père : la France.</span><span class="en">A certificate is required <strong>for every country the applicant has lived in for twelve months or more, cumulatively, over the past ten years</strong>. For the father: France.</span></p>
+    <p><span class="fr">S'y ajoute un casier judiciaire australien, exigé <strong>pour le demandeur et pour la garante</strong> — donc aussi pour l'épouse.</span><span class="en">On top of that, an Australian police check is required <strong>for the applicant and for the sponsor</strong> — so for the wife as well.</span></p>
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption><span class="fr">Frais annexes — en plus des 18 000 A$</span><span class="en">Extra costs — on top of the A$18,000</span></caption>
+    <thead><tr><th><span class="fr">Poste</span><span class="en">Item</span></th><th class="num">AUD</th></tr></thead>
+    <tbody>
+      <tr><td><span class="fr">Examen médical, radio pulmonaire et test sanguin</span><span class="en">Medical, chest X-ray and blood test</span></td><td class="num">360 – 460</td></tr>
+      <tr><td><span class="fr">Casier judiciaire australien — 56 $ chacun, demandeur et garante</span><span class="en">Australian police check — A$56 each, applicant and sponsor</span></td><td class="num">112</td></tr>
+      <tr><td><span class="fr">Casier judiciaire français (Bulletin n° 3)</span><span class="en">French police certificate (Bulletin n° 3)</span></td><td class="num"><span class="fr">gratuit</span><span class="en">free</span></td></tr>
+      <tr><td><span class="fr">Traductions certifiées — état civil et dossier médical</span><span class="en">Certified translations — civil documents and medical file</span></td><td class="num">500 – 1 000</td></tr>
+      <tr><td><span class="fr">Visa transitoire B, si un voyage est nécessaire pendant l'instruction</span><span class="en">Bridging visa B, if travel is needed during processing</span></td><td class="num">575</td></tr>
+      <tr class="total"><td><span class="fr">Total à prévoir</span><span class="en">Total to allow for</span></td><td class="num">~1 000 – 1 600</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note hold">
+    <span class="note-label"><span class="fr">Une question de calendrier</span><span class="en">A matter of timing</span></span>
+    <p><span class="fr">L'examen médical n'étant valable que douze mois, il se place <em>après</em> le dépôt du dossier, quand le ministère délivre un identifiant de santé. À faire confirmer par l'avocat : peut-on le faire <strong>avant</strong> le dépôt, pour connaître l'évaluation du coût avant de payer les 12 000 A$ non remboursables&nbsp;?</span><span class="en">As the medical is valid for only twelve months, it normally comes <em>after</em> lodgement, when the department issues a health identifier. To be confirmed with the lawyer: can it be done <strong>before</strong> lodging, so the cost assessment is known before paying the non-refundable A$12,000?</span></p>
+  </div>
+
   <a class="backtop" href="#top"><span class="fr">↑ Retour au sommaire</span><span class="en">↑ Back to contents</span></a>
 </section>
 
@@ -845,22 +918,22 @@ footer p{max-width:34em}
   <div class="chartbox">
     <svg viewBox="0 0 620 250" role="img" aria-labelledby="chart-title">
       <title id="chart-title">Revenus contre dépenses</title>
-      <text x="0" y="16" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#5A6670" id="lbl-inc">REVENUS</text>
-      <rect id="bar-inc" x="0" y="26" width="292" height="48" fill="#28616F"></rect>
-      <text id="txt-inc" x="302" y="57" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700" fill="#1A222A">3 912 $</text>
-      <text x="0" y="116" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#5A6670" id="lbl-out">DÉPENSES</text>
-      <rect id="bar-fix" x="0" y="126" width="165" height="48" fill="#6E9DA9"></rect>
-      <rect id="bar-rent" x="165" y="126" width="201" height="48" fill="#B08A2E"></rect>
-      <rect id="bar-over" x="292" y="126" width="74" height="48" fill="#A85340"></rect>
-      <text id="txt-out" x="376" y="157" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700" fill="#1A222A">4 897 $</text>
-      <line id="line-inc" x1="292" y1="18" x2="292" y2="192" stroke="#1A222A" stroke-width="3" stroke-dasharray="7 5"></line>
-      <text id="txt-line" x="292" y="212" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#1A222A" text-anchor="middle">↑</text>
-      <text id="txt-line2" x="292" y="232" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#1A222A" text-anchor="middle">revenus</text>
+      <text x="0" y="16" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#64748B" id="lbl-inc">REVENUS</text>
+      <rect id="bar-inc" x="0" y="26" width="292" height="48" fill="#0D7D77"></rect>
+      <text id="txt-inc" x="302" y="57" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700" fill="#0B1220">3 912 $</text>
+      <text x="0" y="116" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#64748B" id="lbl-out">DÉPENSES</text>
+      <rect id="bar-fix" x="0" y="126" width="165" height="48" fill="#5FB3AC"></rect>
+      <rect id="bar-rent" x="165" y="126" width="201" height="48" fill="#B45309"></rect>
+      <rect id="bar-over" x="292" y="126" width="74" height="48" fill="#BE123C"></rect>
+      <text id="txt-out" x="376" y="157" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="700" fill="#0B1220">4 897 $</text>
+      <line id="line-inc" x1="292" y1="18" x2="292" y2="192" stroke="#0B1220" stroke-width="3" stroke-dasharray="7 5"></line>
+      <text id="txt-line" x="292" y="212" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#0B1220" text-anchor="middle">↑</text>
+      <text id="txt-line2" x="292" y="232" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#0B1220" text-anchor="middle">revenus</text>
     </svg>
     <div class="legend">
-      <span><i class="sw" style="background:#6E9DA9"></i><span class="fr">Charges fixes</span><span class="en">Fixed costs</span></span>
-      <span><i class="sw" style="background:#B08A2E"></i><span class="fr">Loyer</span><span class="en">Rent</span></span>
-      <span><i class="sw" style="background:#A85340"></i><span class="fr">Ce qui dépasse les revenus</span><span class="en">Beyond income</span></span>
+      <span><i class="sw" style="background:#5FB3AC"></i><span class="fr">Charges fixes</span><span class="en">Fixed costs</span></span>
+      <span><i class="sw" style="background:#B45309"></i><span class="fr">Loyer</span><span class="en">Rent</span></span>
+      <span><i class="sw" style="background:#BE123C"></i><span class="fr">Ce qui dépasse les revenus</span><span class="en">Beyond income</span></span>
     </div>
     <div class="calc">
       <label for="rent"><span class="fr">Loyer hebdomadaire — déplacez le curseur</span><span class="en">Weekly rent — move the slider</span></label>
@@ -878,7 +951,7 @@ footer p{max-width:34em}
   <ul class="plain">
     <li><span class="fr"><strong>La maison d'Esvres.</strong> À ne pas vendre avant la décision. Ensuite seulement, la garder ou la vendre se discute.</span><span class="en"><strong>The Esvres house.</strong> Not to be sold before the decision. Only afterwards is keeping or selling worth discussing.</span></li>
     <li><span class="fr"><strong>Un logement de famille.</strong> Nous avons un appartement à Kellyville, à côté du métro. Les modalités restent à régler.</span><span class="en"><strong>Family accommodation.</strong> We have a flat in Kellyville, beside the Metro. Arrangements still to work out.</span></li>
-    <li><span class="fr"><strong>La pension australienne côté épouse.</strong> Une pension partielle est possible selon les années de résidence et les revenus du couple. Le rendez-vous pour la chiffrer est gratuit.</span><span class="en"><strong>The Australian pension on the wife's side.</strong> A part pension may be available. The appointment to model it is free.</span></li>
+    <li><span class="fr"><strong>La pension australienne côté épouse — droit acquis.</strong> Elle a vécu en Australie jusqu'à ses 21 ans, soit bien au-delà des dix années requises. Reste à en chiffrer le montant, gratuitement, auprès du Financial Information Service de Centrelink.</span><span class="en"><strong>The Australian pension on the wife's side — entitlement settled.</strong> She lived in Australia until she was 21, well beyond the ten years required. The amount remains to be modelled, free of charge, with Centrelink's Financial Information Service.</span></li>
   </ul>
 
   <div class="note">
